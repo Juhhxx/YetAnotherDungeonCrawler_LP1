@@ -7,7 +7,7 @@ namespace DungeonCrawler
 {
     public class Player : Character
     {
-        public Item[] Inventory { get; private set;} = new Item[5];
+        public List<Item> Inventory { get; private set;} = new List<Item>;
         public Item Weapon { get; private set; }
         public Item Shield { get; private set; }
         public Room InRoom{ get; private set; }
@@ -30,31 +30,25 @@ namespace DungeonCrawler
         }
         public void PickUpItem(Item newItem)
         {
-            foreach (Item item in Inventory)
-            {
-                if (item == null) item = newItem;
-            }
+            Inventory.Add(newItem);
         }
         public void Heal(Item potion)
         {
             hp += potion.Buff;
-            foreach (Item item in Inventory)
+            int index = Inventory.FindIndex(potion);
+            if (index != -1)
             {
-                if (item == potion)
-                {
-                    item = null;
-                    break;
-                }
+                Inventory[index] = null;
             }
         }
         public void Equip()
         {
-            if (newItem is Weapon)
+            if (newItem.Type == BuffType.AttackPower)
             {
                 AttackPower = _baseAttack + newItem.Buff;
                 Weapon = newItem;
             }
-            else if (newItem is Shield)
+            else if (newItem.Type == BuffType.Defense)
             {
                 Defense = _baseDefense + newItem.Buff;
                 Shield = newItem;
