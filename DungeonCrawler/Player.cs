@@ -34,7 +34,7 @@ namespace DungeonCrawler
         }
         public void Heal(Item potion)
         {
-            hp += potion.Buff;
+            hp += potion.BuffValue;
             int index = Inventory.FindIndex(potion);
             if (index != -1)
             {
@@ -45,12 +45,12 @@ namespace DungeonCrawler
         {
             if (newItem.Type == BuffType.AttackPower)
             {
-                AttackPower = _baseAttack + newItem.Buff;
+                AttackPower = _baseAttack + newItem.BuffValue;
                 Weapon = newItem;
             }
             else if (newItem.Type == BuffType.Defense)
             {
-                Defense = _baseDefense + newItem.Buff;
+                Defense = _baseDefense + newItem.BuffValue;
                 Shield = newItem;
             }
         }

@@ -9,13 +9,13 @@ namespace DungeonCrawler
     {
         public string Name { get; }
         public BuffType Type { get; }
-        public int Buff { get; }
+        public int BuffValue { get; }
 
         public Item(string name, BuffType type, int buff)
         {
             Name = name;
             Type = type;
-            Buff = buff;
+            BuffValue = buff;
         }
     }
 }
