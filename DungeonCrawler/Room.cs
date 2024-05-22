@@ -7,21 +7,25 @@ namespace DungeonCrawler
 {
     public class Room
     {
-        Dictionary<string, Room> accessRooms = new Dictionary<string, Room>
+        private Dictionary<string, Room> accessRooms = new Dictionary<string, Room>
         {
             {"north", null},
             {"west", null},
             {"south", null},
             {"east", null}
-        }
-        Enemy enemy;
-        Item item;
+        };
+        public Enemy REnemy { get; private set; }
+        public Item RItem { get; private set; }
 
-        public Room()
+        public Room(Enemy enemy, Item item)
         {
-
+            REnemy = enemy;
+            RItem = item;
         }
 
-        public AddRoom(string room)
+        public AddRoom(string direction, Room room)
+        {
+            accessRooms[direction] = room;
+        }
     }
 }
