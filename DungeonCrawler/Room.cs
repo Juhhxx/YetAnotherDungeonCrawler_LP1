@@ -23,7 +23,7 @@ namespace DungeonCrawler
             RItem = item;
         }
 
-        public AddRoom(string direction, Room room)
+        public void AddRoom(string direction, Room room)
         {
             accessRooms[direction] = room;
         }

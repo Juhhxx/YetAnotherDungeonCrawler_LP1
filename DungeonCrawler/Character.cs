@@ -15,7 +15,7 @@ namespace DungeonCrawler
         {
             Name = name;
             HP = hp;
-            Defense 0 def;
+            Defense = def;
             AttackPower = atk;
         }
         public void Attack (Character target)

@@ -6,7 +6,8 @@ namespace DungeonCrawler
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello, World!");
+            GameInitializer init = new GameInitializer();
+            init.InitializeEnemies();
         }
     }
 }
