@@ -21,4 +21,4 @@ Defense:0
 
 END
 
-# Do NOT delete "END" line as it indicates to the program when there is no new enemies
+# Do NOT delete "END" line as it indicates to the program when to stop

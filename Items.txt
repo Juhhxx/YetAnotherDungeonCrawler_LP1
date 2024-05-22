@@ -1,0 +1,12 @@
+# To create a new Enemy write a new block following the bellow logic
+# Name:[Item Name]
+# BuffType:[Which Player Status will be affected (HP,AttackPower,Defense)]
+# BuffValue:[Value of the buff]
+
+Name:António's Potion
+BuffType:HP
+BuffValue:100
+
+END
+
+# Do NOT delete "END" line as it indicates to the program when to stop
