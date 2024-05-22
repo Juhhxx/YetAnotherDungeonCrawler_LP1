@@ -1,13 +1,24 @@
-Game1Enemies
+# To create a new Enemy write a new block following the bellow logic
+# Name:[Enemy Name]
+# HP:[Enemy HP]
+# AttackPower:[Enemy Atack Power]
+# Defense:[Enemy Defense]
 
-Afonso Cunha
+Name:Afonso Cunha
 HP:50
-AttackPwr:5
+AttackPower:5
 Defense:0
 
-Fire Dragon
+Name:Fire Dragon
 HP:100
 AttackPower:50
 Defense:10
 
+Name:Diogo
+HP:9999
+AttackPower:50
+Defense:0
+
 END
+
+# Do NOT delete "END" line as it indicates to the program when there is no new enemies
