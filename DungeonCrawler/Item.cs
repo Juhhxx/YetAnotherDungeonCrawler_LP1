@@ -5,8 +5,15 @@ using System.Threading.Tasks;
 
 namespace DungeonCrawler
 {
-    public class Item
+    public abstract class Item
     {
-        
+        public string Name { get; }
+        public int Buff { get; }
+
+        public Item(string name, int buff)
+        {
+            Name = name;
+            Buff = buff;
+        }
     }
 }
