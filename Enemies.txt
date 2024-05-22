@@ -1,0 +1,13 @@
+Game1Enemies
+
+Afonso Cunha
+HP:50
+AttackPwr:5
+Defense:0
+
+Fire Dragon
+HP:100
+AttackPower:50
+Defense:10
+
+END
