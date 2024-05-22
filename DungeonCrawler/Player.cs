@@ -37,7 +37,7 @@ namespace DungeonCrawler
         }
         public void Heal(Item potion)
         {
-            hp += potion.buff;
+            hp += potion.Buff;
             foreach (Item item in Inventory)
             {
                 if (item == potion)
@@ -51,12 +51,12 @@ namespace DungeonCrawler
         {
             if (newItem is Weapon)
             {
-                AttackPower = _baseAttack + newItem.AttackPower;
+                AttackPower = _baseAttack + newItem.Buff;
                 Weapon = newItem;
             }
             else if (newItem is Shield)
             {
-                Defense = _baseDefense + newItem.Defense;
+                Defense = _baseDefense + newItem.Buff;
                 Shield = newItem;
             }
         }
