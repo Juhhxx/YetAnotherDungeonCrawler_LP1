@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Threading.Tasks;
 
 namespace DungeonCrawler
@@ -17,7 +18,7 @@ namespace DungeonCrawler
         }
         public void Start()
         {
-            // hello message + instructions
+            // print hello message + instructions
 
             string input;
             string[] inputArray;
@@ -29,6 +30,7 @@ namespace DungeonCrawler
 
                 while ( !hasActed )
                 {
+                    // print instructions - commands and usage examples
                     input = view.AwaitDecision();
                     inputArray = input.Trim().ToLower().Split(' ');
 
@@ -53,6 +55,26 @@ namespace DungeonCrawler
                     else if (inputArray[0] == "view" && inputArray[1] == "status")
                     {
                         view.PlayerStatus(player);
+                    }
+                    else if (inputArray[0] == "heal")
+                    {
+                        try
+                        {
+                            Item newItem = player.SearchInInventory(inputArray[1]);
+
+                            if (newItem == null)
+                            {
+                                // print warning - item is not in inventory
+                                continue;
+                            }
+                            view.HealResult(newItem);
+                            player.Heal(newItem);
+                            hasActed = true;
+                        }
+                        catch (Exception e)
+                        {
+                            //  print warning - need to insert a name
+                        }
                     }
                     else if (inputArray[0] == "exit")
                     {
