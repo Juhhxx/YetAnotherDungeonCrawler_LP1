@@ -36,11 +36,7 @@ namespace DungeonCrawler
         public void Heal(Item potion)
         {
             HP += potion.BuffValue;
-            int index = Inventory.IndexOf(potion);
-            if (index != -1)
-            {
-                Inventory[index] = null;
-            }
+            Inventory.Remove(potion);
         }
         public void Equip(Item newItem)
         {
@@ -77,6 +73,21 @@ namespace DungeonCrawler
         public bool CheckForItem()
         {
             return InRoom.RItem != null;
+        }
+        public Item SearchInInventory(string name)
+        {
+            Item item = null;
+
+            foreach (Item i in Inventory)
+            {
+                if ( i.Name == name) 
+                {
+                    item = i;
+                    break;
+                }
+            }
+
+            return item;
         }
     }
 }
