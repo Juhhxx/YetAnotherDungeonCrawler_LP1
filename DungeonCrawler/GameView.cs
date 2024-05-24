@@ -7,6 +7,14 @@ namespace DungeonCrawler
 {
     public class GameView : IView
     {
+        public void StartMenu()
+        {
+            
+        }
+        public void ExplainGame()
+        {
+
+        }
         public void ColoredText(string str, ConsoleColor color) 
         {
             //Change console foreground color
