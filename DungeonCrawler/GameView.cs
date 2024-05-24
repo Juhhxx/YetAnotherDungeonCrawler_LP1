@@ -15,9 +15,13 @@ namespace DungeonCrawler
         {
             Console.WriteLine($"{characterActive.Name} attacked {characterPassive} for {characterActive.Attack(characterPassive)} damage!");
         }
-        public void MoveResult()
+        public void CanMove()
         {
-
+            Console.WriteLine("Your journey advances into the next room");
+        }
+        public void CantMove()
+        {
+            Console.WriteLine("Not through there");
         }
         public void HealResult(Item potion)
         {
