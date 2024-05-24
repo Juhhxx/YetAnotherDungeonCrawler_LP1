@@ -52,7 +52,7 @@ Defense: {character.Defense} ({character.BaseDefense} + {character.Shield.BuffVa
         }
         public void ItemInformation(Item item)
         {
-
+            Console.WriteLine($"{item.Name} - {item.Type} - {item.BuffValue}");
         }
         public void ByeBye()
         {
