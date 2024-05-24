@@ -31,7 +31,7 @@ namespace DungeonCrawler
         public void PickUpItem(Item newItem)
         {
             Inventory.Add(newItem);
-            InRoom.RItem = null;
+            InRoom.RemoveItem();
         }
         public void Heal(Item potion)
         {
@@ -54,7 +54,7 @@ namespace DungeonCrawler
                 Defense = BaseDefense + newItem.BuffValue;
                 Shield = newItem;
             }
-            InRoom.RItem = null;
+            InRoom.RemoveItem();
         }
         public Item ConfirmItem(string name, bool isPotion)
         {
@@ -62,11 +62,11 @@ namespace DungeonCrawler
 
             if ( name == InRoom.RItem.Name )
             {
-                if ( isPotion && InRoom.RItem.BuffType == BuffType.HP)
+                if ( isPotion && InRoom.RItem.Type == BuffType.HP)
                 {
                     item = InRoom.RItem;
                 }
-                else if ( !isPotion && !(InRoom.RItem.BuffType == BuffType.HP))
+                else if ( !isPotion && !(InRoom.RItem.Type == BuffType.HP))
                 {
                     item = InRoom.RItem;
                 }

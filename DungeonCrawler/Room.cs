@@ -29,5 +29,14 @@ namespace DungeonCrawler
         {
             accessRooms[direction] = room;
         }
+
+        public void RemoveItem()
+        {
+            RItem = null;
+        }
+        public void KillEnemy()
+        {
+            REnemy = null;
+        }
     }
 }
