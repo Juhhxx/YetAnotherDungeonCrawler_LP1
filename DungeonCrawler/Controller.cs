@@ -14,7 +14,8 @@ namespace DungeonCrawler
 
         public Controller(IView view, Player player)
         {
-            
+            this.view = view;
+            this.player = player;
         }
         public void Start()
         {
@@ -79,7 +80,7 @@ namespace DungeonCrawler
                     else if (inputArray[0] == "exit")
                     {
                         view.ByeBye();
-                        break;
+                        return;
                     }
                     else
                     {
