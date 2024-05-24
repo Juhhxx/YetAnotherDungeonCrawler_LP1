@@ -7,14 +7,6 @@ namespace DungeonCrawler
 {
     public class GameView : IView
     {
-        public void StartMenu()
-        {
-            
-        }
-        public void ExplainGame()
-        {
-
-        }
         public void ColoredText(string str, ConsoleColor color) 
         {
             //Change console foreground color
@@ -24,6 +16,30 @@ namespace DungeonCrawler
             //Reset console color
             Console.ResetColor();
         }
+        public string StartMenu()
+        {
+            Console.WriteLine("|-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-|");
+            Console.WriteLine("Dungeon Master:");
+            Console.WriteLine("Greetings... have I ever laid mine eyes on thee before?");
+            Console.WriteLine("Dost thou not feele like talking?");
+            Console.WriteLine("Write it down... if thou knowest how to do such thing that is");
+            Console.WriteLine("What hath brought thee here then?\n");
+
+            Console.WriteLine("New Game");
+            Console.WriteLine("Continue");
+            Console.WriteLine("Quit");
+
+            Console.Write(">");
+            string s = Console.ReadLine();
+            Console.WriteLine("|-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-|");
+            
+            return s;
+        }
+        public void ExplainGame()
+        {
+
+        }
+        
         public void RoomDescription(Room room)
         {
             Console.WriteLine(room.Description);
