@@ -1,0 +1,35 @@
+# To create a new Enemy write a new block following the bellow logic
+# Name:[Item Name]
+# BuffType:[Which Player Status will be affected (HP,AttackPower,Defense)]
+# BuffValue:[Value of the buff]
+
+Name:Room1
+Description:You see a menacing figure in the middle of the Room1
+North:-
+South:-
+East:Room2
+West:-
+Enemy:Diogo
+Item:Legendary Sword
+
+Name:Room2
+Description:There is nothing here except a weird object on the floor
+North:-
+South:-
+East:-
+West:Room1
+Enemy:-
+Item:Pau do Ivan
+
+Name:IvanLoveChambers
+Description:The smell of love fills the air as much as the smell of roten flesh... Whatever depraved fantasies were here explored, they better mimic these corpses and better stay dead
+North:-
+South:-
+East:-
+West:-
+Enemy:-
+Item:-
+
+END
+
+# Do NOT delete "END" line as it indicates to the program when to stop

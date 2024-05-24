@@ -16,6 +16,43 @@ namespace DungeonCrawler
             //Reset console color
             Console.ResetColor();
         }
+        public string StartMenu()
+        {
+            Console.WriteLine("|-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-|");
+            Console.WriteLine("Dungeon Master:");
+            Console.WriteLine("Greetings... have I ever laid mine eyes on thee before?");
+            Console.WriteLine("Dost thou not feele like talking?");
+            Console.WriteLine("Write it down... if thou knowest how to do such thing that is");
+            Console.WriteLine("What hath brought thee here then?\n");
+
+            Console.WriteLine("New Game");
+            Console.WriteLine("Continue");
+            Console.WriteLine("Quit");
+
+            Console.Write(">");
+            string s = Console.ReadLine();
+            Console.WriteLine("|-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-|");
+
+            return s;
+        }
+
+        public void ExplainNewGame()
+        {
+            Console.WriteLine("|-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-|");
+            Console.WriteLine("Dungeon Master:");
+            Console.WriteLine(@"
+This is but a simple prison. A simple yet perilous one at that!
+Thou should not take these challenges lightly as the place thou art delving into is ruthless and unforgiving...
+But don't thou take me as a villain just because of this lair of mine!
+I am here not only to challenge thee but to guide thee through it as well:
+
+1. This prison is composed of many chambers and one of them leads thee to the exit. Find it.
+2. Each chamber is different and may or may not lead to another chamber depending on which direction thou choose to follow.
+3. Each chamber may contain an item or/and an opponent, in which case victory in battle is obligatory to proceed!
+4. Stay sharp and use thy items wisely to navigate this prison and maybe overcome it...");
+            Console.WriteLine("|-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-|");
+        }
+        
         public void RoomDescription(Room room)
         {
             Console.WriteLine(room.Description);
@@ -44,15 +81,29 @@ namespace DungeonCrawler
             Console.WriteLine($"You heal for {potion.BuffValue}");
         }
         public void PlayerStatus(Player character)
-        {
+        {     
             Console.WriteLine(@$"
 {character.Name}, your poor state is the following:
------------------------------------------------------------------------------------------------
-Health: {character.HP}
-Attack Power: {character.AttackPower} ({character.BaseAttack} + {character.Weapon.BuffValue})
-Defense: {character.Defense} ({character.BaseDefense} + {character.Shield.BuffValue})
------------------------------------------------------------------------------------------------
-                            ");
+|-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-|");
+            Console.WriteLine($"Health: {character.HP}");
+            //Prints for the Attack Power stat vision
+            Console.Write($"Attack Power: {character.AttackPower} ");
+            ColoredText("( ", ConsoleColor.Gray); 
+            ColoredText($"{character.BaseAttack}",ConsoleColor.DarkBlue);
+            ColoredText(" + ", ConsoleColor.Gray); 
+            ColoredText($"{character.Weapon.BuffValue}",ConsoleColor.DarkGreen);
+            ColoredText(" )\n", ConsoleColor.Gray);
+
+            //Prints for the Defense stat vision
+            Console.Write($"Attack Power: {character.Defense} ");
+            ColoredText("( ", ConsoleColor.Gray); 
+            ColoredText($"{character.BaseDefense}",ConsoleColor.DarkBlue);
+            ColoredText(" + ", ConsoleColor.Gray); 
+            ColoredText($"{character.Shield.BuffValue}",ConsoleColor.DarkGreen);
+            ColoredText(" )\n", ConsoleColor.Gray);
+
+            Console.WriteLine(@$"
+|-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-|");
         }
         public void PickupItem(Item item)
         {

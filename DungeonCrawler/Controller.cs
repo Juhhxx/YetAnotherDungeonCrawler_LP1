@@ -3,12 +3,10 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
 
 namespace DungeonCrawler
 {
-    public class Controller : Controller
+    public class Controller
     {
         private IView view;
         private Player player;
