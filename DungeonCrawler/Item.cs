@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace DungeonCrawler
 {
-    public abstract class Item
+    public class Item
     {
         public string Name { get; }
         public BuffType Type { get; }

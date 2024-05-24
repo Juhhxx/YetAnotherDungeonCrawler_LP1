@@ -8,6 +8,10 @@ namespace DungeonCrawler
         {
             GameInitializer init = new GameInitializer();
             init.InitializeEnemies();
+            Console.WriteLine("\n");
+            init.InitializeItems();
+            Console.WriteLine("\n");
+            init.InitializeRooms();
         }
     }
 }
