@@ -62,11 +62,11 @@ namespace DungeonCrawler
 
             if ( name == InRoom.RItem.Name )
             {
-                if ( isPotion && InRoom.RItem.BuffType == BuffType.HP)
+                if ( isPotion && InRoom.RItem.Type == BuffType.HP)
                 {
                     item = InRoom.RItem;
                 }
-                else if ( !isPotion && !(InRoom.RItem.BuffType == BuffType.HP))
+                else if ( !isPotion && !(InRoom.RItem.Type == BuffType.HP))
                 {
                     item = InRoom.RItem;
                 }
