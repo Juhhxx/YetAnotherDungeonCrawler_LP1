@@ -7,9 +7,9 @@ namespace DungeonCrawler
     public abstract class Character
     {
         public string Name { get; }
-        public int HP { get; private set; }
-        public int AttackPower { get; private set; }
-        public int Defense { get; private set; }
+        public int HP { get; protected set; }
+        public int AttackPower { get; protected set; }
+        public int Defense { get; protected set; }
 
         public Character(string name, int hp, int def, int atk)
         {

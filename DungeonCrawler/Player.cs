@@ -7,7 +7,7 @@ namespace DungeonCrawler
 {
     public class Player : Character
     {
-        public List<Item> Inventory { get; private set;} = new List<Item>;
+        public List<Item> Inventory { get; private set;} = new List<Item>();
         public Item Weapon { get; private set; }
         public Item Shield { get; private set; }
         public Room InRoom{ get; private set; }
@@ -16,7 +16,7 @@ namespace DungeonCrawler
         public Player(string name, int hp, int def, int atk, Room room) : base(name,hp,def,atk)
         {
             BaseAttack = AttackPower;
-            BaseDefense = DefensePower;
+            BaseDefense = Defense;
             InRoom = room;
         }
         public bool Move(string direction)
@@ -34,14 +34,14 @@ namespace DungeonCrawler
         }
         public void Heal(Item potion)
         {
-            hp += potion.BuffValue;
+            HP += potion.BuffValue;
             int index = Inventory.FindIndex(potion);
             if (index != -1)
             {
                 Inventory[index] = null;
             }
         }
-        public void Equip()
+        public void Equip(Item newItem)
         {
             if (newItem.Type == BuffType.AttackPower)
             {

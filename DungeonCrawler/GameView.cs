@@ -7,7 +7,7 @@ namespace DungeonCrawler
 {
     public class GameView : IView
     {
-        public void ColoredText(string str, ConsoleColor color)
+        public void ColoredText(string str, ConsoleColor color) 
         {
             //Change console foreground color
             Console.ForegroundColor = color;
@@ -43,7 +43,7 @@ namespace DungeonCrawler
 -------------------------------------------------------
 Health: {character.HP}
 Attack Power: {character.AttackPower} ({character.BaseAttack} + {character.Weapon.BuffValue})
-Defense: {character.}
+Defense: {character.Defense} ({character.BaseDefense} + {character.Shield.BuffValue})
                                     ");
         }
         public void PickupItem(Item item)
