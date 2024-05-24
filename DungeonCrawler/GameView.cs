@@ -48,7 +48,7 @@ Defense: {character.Defense} ({character.BaseDefense} + {character.Shield.BuffVa
         }
         public void PickupItem(Item item)
         {
-
+            Console.WriteLine($"You added {item.Name} to your inventory.");
         }
         public void ItemInformation(Item item)
         {
