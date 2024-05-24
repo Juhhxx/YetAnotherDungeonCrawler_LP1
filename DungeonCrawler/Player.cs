@@ -19,7 +19,7 @@ namespace DungeonCrawler
             BaseDefense = Defense;
             InRoom = room;
         }
-        public bool Move(string direction)
+        public bool Move(Room room, string direction)
         {
             if ( room.accessRooms[direction] != null )
             {
@@ -35,7 +35,7 @@ namespace DungeonCrawler
         public void Heal(Item potion)
         {
             HP += potion.BuffValue;
-            int index = Inventory.FindIndex(potion);
+            int index = Inventory.IndexOf(potion);
             if (index != -1)
             {
                 Inventory[index] = null;

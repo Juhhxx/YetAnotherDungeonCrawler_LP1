@@ -7,7 +7,7 @@ namespace DungeonCrawler
 {
     public class Room
     {
-        private Dictionary<string, Room> accessRooms = new Dictionary<string, Room>
+        public Dictionary<string, Room> accessRooms = new Dictionary<string, Room>
         {
             {"north", null},
             {"west", null},
