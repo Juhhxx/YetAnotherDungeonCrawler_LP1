@@ -44,15 +44,29 @@ namespace DungeonCrawler
             Console.WriteLine($"You heal for {potion.BuffValue}");
         }
         public void PlayerStatus(Player character)
-        {
+        {     
             Console.WriteLine(@$"
 {character.Name}, your poor state is the following:
------------------------------------------------------------------------------------------------
-Health: {character.HP}
-Attack Power: {character.AttackPower} ({character.BaseAttack} + {character.Weapon.BuffValue})
-Defense: {character.Defense} ({character.BaseDefense} + {character.Shield.BuffValue})
------------------------------------------------------------------------------------------------
-                            ");
+|-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-|");
+            Console.WriteLine($"Health: {character.HP}");
+            //Prints for the Attack Power stat vision
+            Console.Write($"Attack Power: {character.AttackPower} ");
+            ColoredText("( ", ConsoleColor.Gray); 
+            ColoredText($"{character.BaseAttack}",ConsoleColor.DarkBlue);
+            ColoredText(" + ", ConsoleColor.Gray); 
+            ColoredText($"{character.Weapon.BuffValue}",ConsoleColor.DarkGreen);
+            ColoredText(" )\n", ConsoleColor.Gray);
+
+            //Prints for the Defense stat vision
+            Console.Write($"Attack Power: {character.Defense} ");
+            ColoredText("( ", ConsoleColor.Gray); 
+            ColoredText($"{character.BaseDefense}",ConsoleColor.DarkBlue);
+            ColoredText(" + ", ConsoleColor.Gray); 
+            ColoredText($"{character.Shield.BuffValue}",ConsoleColor.DarkGreen);
+            ColoredText(" )\n", ConsoleColor.Gray);
+
+            Console.WriteLine(@$"
+|-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-|");
         }
         public void PickupItem(Item item)
         {
