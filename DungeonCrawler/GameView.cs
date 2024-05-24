@@ -32,12 +32,14 @@ namespace DungeonCrawler
             Console.Write(">");
             string s = Console.ReadLine();
             Console.WriteLine("|-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-|");
-            
+
             return s;
         }
-        public void ExplainGame()
-        {
 
+        public void ExplainNewGame()
+        {
+            Console.WriteLine("|-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-|");
+            Console.WriteLine("Dungeon Master:");
         }
         
         public void RoomDescription(Room room)

@@ -8,7 +8,7 @@ namespace DungeonCrawler
     public interface IView
     {
         public string StartMenu(); //Elaborar mais nesta ideia de menu
-        public void ExplainGame();
+        public void ExplainNewGame();
         public void ColoredText(string str, ConsoleColor color);
         public void RoomDescription(Room room);
         public string AwaitDecision();
