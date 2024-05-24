@@ -25,11 +25,11 @@ namespace DungeonCrawler
         }
         public void HealResult(Item potion)
         {
-
+            Console.WriteLine($"You heal for {potion.BuffValue}");
         }
         public void PrintStatus(Character character)
         {
-
+            
         }
         public void PickupItem(Item item)
         {
