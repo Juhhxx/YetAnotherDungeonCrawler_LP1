@@ -38,13 +38,14 @@ namespace DungeonCrawler
         }
         public void PlayerStatus(Player character)
         {
-            Console.WriteLine
-(@$"{character.Name}, your poor state is the following:
--------------------------------------------------------
+            Console.WriteLine(@$"
+{character.Name}, your poor state is the following:
+-----------------------------------------------------------------------------------------------
 Health: {character.HP}
 Attack Power: {character.AttackPower} ({character.BaseAttack} + {character.Weapon.BuffValue})
 Defense: {character.Defense} ({character.BaseDefense} + {character.Shield.BuffValue})
-                                    ");
+-----------------------------------------------------------------------------------------------
+                            ");
         }
         public void PickupItem(Item item)
         {
@@ -56,15 +57,16 @@ Defense: {character.Defense} ({character.BaseDefense} + {character.Shield.BuffVa
         }
         public void ByeBye()
         {
-
+            Console.WriteLine("You wish to rest?");
+            Console.WriteLine("Very well... the dungeon will be waiting.");
         }
         public void GameOver()
         {
-
+            Console.WriteLine("Death. A sweet relief...");
         }
         public void GameWin()
         {
-
+            Console.WriteLine("Triumphant victory!");
         }
     }
 }

@@ -14,7 +14,7 @@ namespace DungeonCrawler
         public void CanMove();
 
         public void HealResult(Item potion);
-        public void PlayerStatus(Character character);
+        public void PlayerStatus(Player character);
         public void PickupItem(Item item);
         public void ItemInformation(Item item);
         public void ByeBye();
