@@ -7,7 +7,7 @@ namespace DungeonCrawler
 {
     public class Enemy : Character
     {
-        public Enemy(string name, int hp, int def, int atk) : base(name,hp,def,atk)
+        public Enemy(string name, int hp, int atk, int def) : base(name,hp,atk,def)
         {
 
         }

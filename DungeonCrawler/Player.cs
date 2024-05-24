@@ -13,7 +13,7 @@ namespace DungeonCrawler
         public Room InRoom{ get; private set; }
         public int BaseAttack{ get; private set;}
         public int BaseDefense{ get; private set;}
-        public Player(string name, int hp, int def, int atk, Room room) : base(name,hp,def,atk)
+        public Player(string name, int hp, int atk, int def, Room room) : base(name,hp,atk,def)
         {
             BaseAttack = AttackPower;
             BaseDefense = Defense;

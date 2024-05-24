@@ -11,7 +11,7 @@ namespace DungeonCrawler
         public int AttackPower { get; protected set; }
         public int Defense { get; protected set; }
 
-        public Character(string name, int hp, int def, int atk)
+        public Character(string name, int hp, int atk, int def)
         {
             Name = name;
             HP = hp;
