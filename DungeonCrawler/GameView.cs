@@ -40,6 +40,17 @@ namespace DungeonCrawler
         {
             Console.WriteLine("|-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-|");
             Console.WriteLine("Dungeon Master:");
+            Console.WriteLine(@"
+This is but a simple prison. A simple yet perilous one at that!
+Thou should not take these challenges lightly as the place thou art delving into is ruthless and unforgiving...
+But don't thou take me as a villain just because of this lair of mine!
+I am here not only to challenge thee but to guide thee through it as well:
+
+1. This prison is composed of many chambers and one of them leads thee to the exit. Find it.
+2. Each chamber is different and may or may not lead to another chamber depending on which direction thou choose to follow.
+3. Each chamber may contain an item or/and an opponent, in which case victory in battle is obligatory to proceed!
+4. Stay sharp and use thy items wisely to navigate this prison and maybe overcome it...");
+            Console.WriteLine("|-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-|");
         }
         
         public void RoomDescription(Room room)
