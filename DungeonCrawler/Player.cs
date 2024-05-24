@@ -19,11 +19,11 @@ namespace DungeonCrawler
             BaseDefense = Defense;
             InRoom = room;
         }
-        public bool Move(Room room, string direction)
+        public bool Move(string direction)
         {
-            if ( room.accessRooms[direction] != null )
+            if ( InRoom.accessRooms[direction] != null )
             {
-                InRoom = room.accessRooms[direction];
+                InRoom = InRoom.accessRooms[direction];
                 return true;
             }
             return false;
