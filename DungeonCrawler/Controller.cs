@@ -21,7 +21,7 @@ namespace DungeonCrawler
 
             string input;
             string[] inputArray;
-            bool hasActed;
+            bool hasActed = false;
 
             while (true)
             {
@@ -35,11 +35,12 @@ namespace DungeonCrawler
                     if (inputArray[0] == "go")
                     {
                         hasActed = player.Move(inputArray[1]);
-                        hasActed ? view.CanMove() : view.CantMove();
+                        if (hasActed) view.CanMove();
+                        else view.CantMove();
                     }
                     else if (inputArray[0] == "pick" && inputArray[1] == "up")
                     {
-                        hasActed = HandleItemAction(inputArray[2], true, player.PickupItem);
+                        hasActed = HandleItemAction(inputArray[2], true, player.PickUpItem);
                     }
                     else if (inputArray[0] == "equip")
                     {
@@ -47,7 +48,7 @@ namespace DungeonCrawler
                     }
                     else if (inputArray[0] == "attack")
                     {
-                        player.Attack(player.InRoom.REnemy)
+                        player.Attack(player.InRoom.REnemy);
                     }
                     else if (inputArray[0] == "view" && inputArray[1] == "status")
                     {
@@ -60,14 +61,14 @@ namespace DungeonCrawler
                     }
                     else
                     {
-                        view.WrongCommand();
+                        // print warning - command was wrong
                     }
                 }
 
                 hasActed = false;
             }
         }
-        public HandleItemAction(string input, Action<Item> playerAction, bool isPotion)
+        public bool HandleItemAction(string input, bool isPotion, Action<Item> playerAction)
         {
             bool result = false;
 
