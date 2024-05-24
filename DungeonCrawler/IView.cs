@@ -9,6 +9,7 @@ namespace DungeonCrawler
     {
         public void ColoredText(string str, ConsoleColor color);
         public void RoomDescription(Room room);
+        public string AwaitDecision();
         public void AttackResult(Character characterActive, Character characterPassive );
         public void CantMove();
         public void CanMove();

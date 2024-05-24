@@ -20,6 +20,13 @@ namespace DungeonCrawler
         {
             Console.WriteLine(room.Description);
         }
+        public string AwaitDecision()
+        {
+            Console.Write(">");
+            string s = Console.ReadLine();
+            return s;
+        }
+
         public void AttackResult(Character characterActive, Character characterPassive )
         {
             Console.WriteLine($"{characterActive.Name} attacked {characterPassive} for {characterActive.Attack(characterPassive)} damage!");
