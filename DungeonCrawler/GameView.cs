@@ -9,11 +9,11 @@ namespace DungeonCrawler
     {
         public void RoomDescription(Room room)
         {
-            Console.WriteLine(Room.Description);
+            Console.WriteLine(room.Description);
         }
         public void AttackResult(Character characterActive, Character characterPassive )
         {
-
+            Console.WriteLine($"{characterActive.Name} attacked {characterPassive} for {characterActive.Attack(characterPassive)} damage!");
         }
         public void MoveResult()
         {

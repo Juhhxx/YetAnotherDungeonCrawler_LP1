@@ -18,11 +18,12 @@ namespace DungeonCrawler
             Defense = def;
             AttackPower = atk;
         }
-        public void Attack (Character target)
+        public int Attack (Character target)
         {
             int hitPower = AttackPower - target.Defense;
             if (hitPower < 0) hitPower = 0;
             target.HP -= hitPower;
+            return hitPower;
         }
     }
 }
