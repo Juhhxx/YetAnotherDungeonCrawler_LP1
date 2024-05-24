@@ -31,6 +31,7 @@ namespace DungeonCrawler
         public void PickUpItem(Item newItem)
         {
             Inventory.Add(newItem);
+            InRoom.RItem = null;
         }
         public void Heal(Item potion)
         {
@@ -53,6 +54,29 @@ namespace DungeonCrawler
                 Defense = BaseDefense + newItem.BuffValue;
                 Shield = newItem;
             }
+            InRoom.RItem = null;
+        }
+        public Item ConfirmItem(string name, bool isPotion)
+        {
+            Item item = null;
+
+            if ( name == InRoom.RItem.Name )
+            {
+                if ( isPotion && InRoom.RItem.BuffType == BuffType.HP)
+                {
+                    item = InRoom.RItem;
+                }
+                else if ( !isPotion && !(InRoom.RItem.BuffType == BuffType.HP))
+                {
+                    item = InRoom.RItem;
+                }
+            }
+
+            return item;
+        }
+        public bool CheckForItem()
+        {
+            return InRoom.RItem != null;
         }
     }
 }
