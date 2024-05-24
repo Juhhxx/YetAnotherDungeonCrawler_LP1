@@ -1,11 +1,19 @@
-# To create a new Enemy write a new block following the bellow logic
+# To create a new item write a new block following the bellow logic
 # Name:[Item Name]
 # BuffType:[Which Player Status will be affected (HP,AttackPower,Defense)]
 # BuffValue:[Value of the buff]
 
 Name:António's Potion
 BuffType:HP
+BuffValue:50
+
+Name:Legendary Sword
+BuffType:AttackPower
 BuffValue:100
+
+Name:Pau do Ivan
+BuffType:AttackPower
+BuffValue:-1
 
 END
 
