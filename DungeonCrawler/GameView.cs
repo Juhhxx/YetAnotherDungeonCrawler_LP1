@@ -7,6 +7,15 @@ namespace DungeonCrawler
 {
     public class GameView : IView
     {
+        public void ColoredText(string str, ConsoleColor color)
+        {
+            //Change console foreground color
+            Console.ForegroundColor = color;
+            //Print given string to the console
+            Console.Write(str);
+            //Reset console color
+            Console.ResetColor();
+        }
         public void RoomDescription(Room room)
         {
             Console.WriteLine(room.Description);
@@ -27,9 +36,15 @@ namespace DungeonCrawler
         {
             Console.WriteLine($"You heal for {potion.BuffValue}");
         }
-        public void PrintStatus(Character character)
+        public void PlayerStatus(Player character)
         {
-            
+            Console.WriteLine
+(@$"{character.Name}, your poor state is the following:
+-------------------------------------------------------
+Health: {character.HP}
+Attack Power: {character.AttackPower} ({character.BaseAttack} + {character.Weapon.BuffValue})
+Defense: {character.}
+                                    ");
         }
         public void PickupItem(Item item)
         {

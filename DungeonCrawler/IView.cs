@@ -7,11 +7,14 @@ namespace DungeonCrawler
 {
     public interface IView
     {
+        public void ColoredText(string str, ConsoleColor color);
         public void RoomDescription(Room room);
         public void AttackResult(Character characterActive, Character characterPassive );
-        public void MoveResult();
+        public void CantMove();
+        public void CanMove();
+
         public void HealResult(Item potion);
-        public void PrintStatus(Character character);
+        public void PlayerStatus(Character character);
         public void PickupItem(Item item);
         public void ItemInformation(Item item);
         public void ByeBye();

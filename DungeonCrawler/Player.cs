@@ -11,12 +11,12 @@ namespace DungeonCrawler
         public Item Weapon { get; private set; }
         public Item Shield { get; private set; }
         public Room InRoom{ get; private set; }
-        private int _baseAttack;
-        private int _baseDefense;
+        public int BaseAttack{ get; private set;}
+        public int BaseDefense{ get; private set;}
         public Player(string name, int hp, int def, int atk, Room room) : base(name,hp,def,atk)
         {
-            _baseAttack = AttackPower;
-            _baseDefense = DefensePower;
+            BaseAttack = AttackPower;
+            BaseDefense = DefensePower;
             InRoom = room;
         }
         public bool Move(string direction)
@@ -45,12 +45,12 @@ namespace DungeonCrawler
         {
             if (newItem.Type == BuffType.AttackPower)
             {
-                AttackPower = _baseAttack + newItem.BuffValue;
+                AttackPower = BaseAttack + newItem.BuffValue;
                 Weapon = newItem;
             }
             else if (newItem.Type == BuffType.Defense)
             {
-                Defense = _baseDefense + newItem.BuffValue;
+                Defense = BaseDefense + newItem.BuffValue;
                 Shield = newItem;
             }
         }
