@@ -122,6 +122,20 @@ Stay sharp and use thy items wisely to navigate this prison and maybe overcome i
         {
             Console.WriteLine($"{item.Name} - {item.Type} - {item.BuffValue}");
         }
+        public void WarningItemNotInInventory()
+        {
+            Console.WriteLine("What you search for is not in our possession");
+        }
+        public void WarningNeedName()
+        {
+            Console.WriteLine("Every adventurer has a name, you should be no exception");
+        }
+        public void WarningWrongCommand()
+        {}
+        public void WarningNoItemToPickUp()
+        {}
+        public void WarningNotShieldOrSword()
+        {}
         public void ByeBye()
         {
             Console.WriteLine("You wish to rest?");

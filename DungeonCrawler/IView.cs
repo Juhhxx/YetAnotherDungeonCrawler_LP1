@@ -20,7 +20,7 @@ namespace DungeonCrawler
         public void PlayerStatus(Player character);
         public void PickupItem(Item item);
         public void ItemInformation(Item item);
-        public void WarningItemNotInInventor();
+        public void WarningItemNotInInventory();
         public void WarningNeedName();
         public void WarningWrongCommand();
         public void WarningNoItemToPickUp();
