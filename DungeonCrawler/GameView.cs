@@ -131,7 +131,9 @@ Stay sharp and use thy items wisely to navigate this prison and maybe overcome i
             Console.WriteLine("Every adventurer has a name, you should be no exception");
         }
         public void WarningWrongCommand()
-        {}
+        {
+            Console.WriteLine("Something is wrong with that command spell...");
+        }
         public void WarningNoItemToPickUp()
         {}
         public void WarningNotShieldOrSword()
