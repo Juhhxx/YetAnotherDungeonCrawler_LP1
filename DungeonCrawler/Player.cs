@@ -70,9 +70,24 @@ namespace DungeonCrawler
 
             return item;
         }
+        public Enemy ConfirmEnemy(string name)
+        {
+            Enemy enemy = null;
+
+            if ( name == InRoom.REnemy.Name )
+            {
+                enemy = InRoom.REnemy;
+            }
+
+            return enemy;
+        }
         public bool CheckForItem()
         {
             return InRoom.RItem != null;
+        }
+        public bool CheckForEnemy()
+        {
+            return InRoom.REnemy != null;
         }
         public Item SearchInInventory(string name)
         {
