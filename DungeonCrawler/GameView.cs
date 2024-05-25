@@ -139,7 +139,9 @@ Stay sharp and use thy items wisely to navigate this prison and maybe overcome i
             Console.WriteLine("there's nothing to pick up...");
         }
         public void WarningNotShieldOrSword()
-        {}
+        {
+            Console.WriteLine("That's not a piece of equipment.");
+        }
         public void ByeBye()
         {
             Console.WriteLine("You wish to rest?");
