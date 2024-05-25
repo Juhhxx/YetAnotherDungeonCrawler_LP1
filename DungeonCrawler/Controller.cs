@@ -24,7 +24,8 @@ namespace DungeonCrawler
         {
             string input;
 
-            // print hello message
+            // print main menu
+            
             while (true)
             {
                 if (end) break;
@@ -59,55 +60,47 @@ namespace DungeonCrawler
         public void StartGameLoop()
         {
             string input;
-            string[] inputArray;
 
             view.RoomDescription(player.InRoom);
 
-            while (true)
+            while ( true )
             {
-                input = view.AwaitDecision();
-                inputArray = input.Trim().ToLower().Split(' ');
+                input = view.AwaitDecision().Trim().ToLower();
 
-                if (inputArray[0] == "move")
+                switch ( input )
                 {
-                    HandleRoomAction();
-                    if (end) break;
-                }
-                else if (inputArray[0] == "pick" && inputArray[1] == "up")
-                {
-                    HandleItemAction(inputArray[2], true, player.PickUpItem);
-                }
-                else if (inputArray[0] == "equip")
-                {
-                    HandleItemAction(inputArray[1], false, player.Equip);
-                }
-                else if (inputArray[0] == "attack")
-                {
-                    HandleEnemyAction(inputArray[1]);
-                    if (end || died)
-                    {
-                        died = false;
+                    case "move":
+                        HandleRoomAction();
                         break;
-                    }
+                    case "pick up":
+                        HandleItemAction(true, player.PickUpItem);
+                        break;
+                    case "equip":
+                        HandleItemAction(false, player.Equip);
+                        break;
+                    case "attack":
+                        HandleEnemyAction();
+                        break;
+                    case "view status":
+                        view.PlayerStatus(player);
+                        break;
+                    case "heal":
+                        HandleHealAction();
+                        break;
+                    case "quit":
+                        view.ByeBye();
+                        end = true;
+                        break;
+                    default:
+                        // print warning - command was wrong
+                        view.WarningWrongCommand();
+                        break;
                 }
-                else if (inputArray[0] == "view" && inputArray[1] == "status")
+
+                if (end || died)
                 {
-                    view.PlayerStatus(player);
-                }
-                else if (inputArray[0] == "heal")
-                {
-                    HandleHealAction(inputArray[1]);
-                }
-                else if (inputArray[0] == "quit")
-                {
-                    view.ByeBye();
-                    end = true;
+                    died = false;
                     break;
-                }
-                else
-                {
-                    // print warning - command was wrong
-                    view.WarningWrongCommand();
                 }
             }
         }
@@ -144,7 +137,7 @@ namespace DungeonCrawler
                 }
             }
         }
-        public void HandleItemAction(string input, bool isPotion, Action<Item> playerAction)
+        public void HandleItemAction( bool isPotion, Action<Item> playerAction)
         {
             if ( !player.CheckForItem() )
             {
@@ -153,60 +146,40 @@ namespace DungeonCrawler
             }
             else
             {
-                try 
-                {
-                    Item newItem = player.ConfirmItem(input, isPotion);
+                Item newItem = player.ConfirmItem(isPotion);
 
-                    if ( newItem != null && TakeItem(newItem) )
-                    {
-                        playerAction(newItem);
-                        view.PickupItem(newItem);
-                    }
-                    else
-                    {
-                        // print warning - item is not shield or sword
-                        view.WarningNotShieldOrSword();
-                    }
-                }
-                catch (Exception e)
+                view.ItemInformation(newItem);
+
+                if ( newItem != null && TakeItem(newItem) )
                 {
-                    //  print warning - need to insert a name
-                    view.WarningNeedName();
+                    playerAction(newItem);
+                    view.PickupItem(newItem);
+                }
+                else
+                {
+                    // print warning - item is not shield or sword
+                    view.WarningNotShieldOrSword();
                 }
             }
         }
-        public void HandleEnemyAction(string input)
+        public void HandleEnemyAction()
         {
-            if ( !player.CheckForEnemy() )
+            if ( player.CheckForEnemy() )
             {
-                // print warning - there is no enemy to fight
+                Enemy enemy = player.ConfirmEnemy();
+                StartCombat(enemy);
             }
             else
             {
-                try
-                {
-                    Enemy enemy = player.ConfirmEnemy(input);
-
-                    if (enemy != null)
-                    {
-                        StartCombat(enemy);
-                    }
-                    else
-                    {
-                        // print warning - there is no enemy with that name
-
-                    }
-                }
-                catch (Exception e)
-                {
-                    //  print warning - need to insert a name
-                    view.WarningNeedName();
-                }
+                // print warning - there is no enemy to fight
             }
         }
-        public bool HandleHealAction(string input)
+        public bool HandleHealAction()
         {
             bool result = false;
+            
+            // print - ask which item they want to use
+            string input = view.AwaitDecision().Trim().ToLower();
 
             try
             {
@@ -283,7 +256,7 @@ namespace DungeonCrawler
                         case "attack":
                             hitPower = player.Attack(enemy);
                             view.AttackResult(player, enemy, hitPower);
-                            if (enemy.HP <= 0)
+                            if (enemy.IsDead())
                             {
                                 // print outcome - you won the battle
                                 return;
@@ -291,7 +264,7 @@ namespace DungeonCrawler
                             hasActed = true;
                             break;
                         case "heal":
-                            hasActed = HandleHealAction(inputArray[1]);
+                            hasActed = HandleHealAction();
                             break;
                         case "view":
                             if (inputArray[1] == "status")
@@ -316,7 +289,7 @@ namespace DungeonCrawler
                 hitPower = enemy.Attack(player);
                 view.AttackResult(enemy, player, hitPower);
 
-                if (player.HP <= 0)
+                if (player.IsDead())
                 {
                     view.GameOver();
                     end = true;
