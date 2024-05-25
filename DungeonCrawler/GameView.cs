@@ -47,9 +47,18 @@ But don't thou take me as a villain just because of this lair of mine!
 I am here not only to challenge thee but to guide thee through it as well:
 
 1. This prison is composed of many chambers and one of them leads thee to the exit. Find it.
-2. Each chamber is different and may or may not lead to another chamber depending on which direction thou choose to follow.
-3. Each chamber may contain an item or/and an opponent, in which case victory in battle is obligatory to proceed!
-4. Stay sharp and use thy items wisely to navigate this prison and maybe overcome it...");
+2. Write down simple command spell to explore this dungeon and interact with its elements!
+    Here's a comprehensive list of such spells:
+        .'Move [direction]' - You investigate a possible way in the direction you choose ('North', 'West', 'South', 'East')  
+        .'Attack' - Use it in battles to inflict damage on the enemy 
+        .'Heal' - Use it in or out of battles to select a potion if you have any in order to heal up
+        .'Pick up item' - If there is an item in the room you're in, use this to pick it up
+        .'Equip' - Use it to equip //ver como vai se ro processo de selção de items
+        .'Inventory' - Use it to open your invotry and chekc your items 
+3. Each chamber is different and may or may not lead to another chamber depending on which direction thou choose to follow.
+4. Each chamber may contain an item or/and an opponent, in which case victory in battle is obligatory to proceed!
+
+Stay sharp and use thy items wisely to navigate this prison and maybe overcome it...");
             Console.WriteLine("|-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-|");
         }
         
