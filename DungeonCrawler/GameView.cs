@@ -72,6 +72,20 @@ Stay sharp and use thy items wisely to navigate this prison and maybe overcome i
             string s = Console.ReadLine();
             return s;
         }
+        public string AwaitBattleInput()
+        {
+            Console.WriteLine("The battlefield is ready for your decision. Quick!");
+            Console.Write(">");
+            string s = Console.ReadLine();
+            return s;
+        }
+        public string AwaitRoomInput()
+        {
+            Console.WriteLine("The dungeon awaits your decision...");
+            Console.Write(">");
+            string s = Console.ReadLine();
+            return s;
+        }
 
         public void AttackResult(Character characterActive, Character characterPassive )
         {

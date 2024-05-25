@@ -12,10 +12,11 @@ namespace DungeonCrawler
         public void ColoredText(string str, ConsoleColor color);
         public void RoomDescription(Room room);
         public string AwaitDecision();
+        public string AwaitBattleInput();
+        public string AwaitRoomInput();
         public void AttackResult(Character characterActive, Character characterPassive );
         public void CantMove();
         public void CanMove();
-
         public void HealResult(Item potion);
         public void PlayerStatus(Player character);
         public void PickupItem(Item item);
