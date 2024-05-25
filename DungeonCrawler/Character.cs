@@ -23,7 +23,12 @@ namespace DungeonCrawler
             int hitPower = AttackPower - target.Defense;
             if (hitPower < 0) hitPower = 0;
             target.HP -= hitPower;
+            if (target.HP < 0) target.HP = 0;
             return hitPower;
+        }
+        public bool isDead()
+        {
+            return HP <= 0;
         }
     }
 }
