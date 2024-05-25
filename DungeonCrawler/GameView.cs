@@ -87,9 +87,9 @@ Stay sharp and use thy items wisely to navigate this prison and maybe overcome i
             return s;
         }
 
-        public void AttackResult(Character characterActive, Character characterPassive )
+        public void AttackResult(Character characterActive, Character characterPassive, int hitPower)
         {
-            Console.WriteLine($"{characterActive.Name} attacked {characterPassive} for {characterActive.Attack(characterPassive)} damage!");
+            Console.WriteLine($"{characterActive.Name} attacked {characterPassive} for {hitPower} damage!");
         }
         public void CanMove()
         {
