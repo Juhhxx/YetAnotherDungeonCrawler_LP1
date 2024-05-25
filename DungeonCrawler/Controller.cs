@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Threading.Tasks;
 
 namespace DungeonCrawler
@@ -13,15 +14,16 @@ namespace DungeonCrawler
 
         public Controller(IView view, Player player)
         {
-            
+            this.view = view;
+            this.player = player;
         }
         public void Start()
         {
-            // hello message + instructions
+            // print hello message + instructions
 
             string input;
             string[] inputArray;
-            bool hasActed;
+            bool hasActed = false;
 
             while (true)
             {
@@ -29,17 +31,19 @@ namespace DungeonCrawler
 
                 while ( !hasActed )
                 {
+                    // print instructions - commands and usage examples
                     input = view.AwaitDecision();
                     inputArray = input.Trim().ToLower().Split(' ');
 
                     if (inputArray[0] == "go")
                     {
                         hasActed = player.Move(inputArray[1]);
-                        hasActed ? view.CanMove() : view.CantMove();
+                        if (hasActed) view.CanMove();
+                        else view.CantMove();
                     }
                     else if (inputArray[0] == "pick" && inputArray[1] == "up")
                     {
-                        hasActed = HandleItemAction(inputArray[2], true, player.PickupItem);
+                        hasActed = HandleItemAction(inputArray[2], true, player.PickUpItem);
                     }
                     else if (inputArray[0] == "equip")
                     {
@@ -47,27 +51,47 @@ namespace DungeonCrawler
                     }
                     else if (inputArray[0] == "attack")
                     {
-                        player.Attack(player.InRoom.REnemy)
+                        player.Attack(player.InRoom.REnemy);
                     }
                     else if (inputArray[0] == "view" && inputArray[1] == "status")
                     {
                         view.PlayerStatus(player);
                     }
+                    else if (inputArray[0] == "heal")
+                    {
+                        try
+                        {
+                            Item newItem = player.SearchInInventory(inputArray[1]);
+
+                            if (newItem == null)
+                            {
+                                // print warning - item is not in inventory
+                                continue;
+                            }
+                            view.HealResult(newItem);
+                            player.Heal(newItem);
+                            hasActed = true;
+                        }
+                        catch (Exception e)
+                        {
+                            //  print warning - need to insert a name
+                        }
+                    }
                     else if (inputArray[0] == "exit")
                     {
                         view.ByeBye();
-                        break;
+                        return;
                     }
                     else
                     {
-                        view.WrongCommand();
+                        // print warning - command was wrong
                     }
                 }
 
                 hasActed = false;
             }
         }
-        public HandleItemAction(string input, Action<Item> playerAction, bool isPotion)
+        public bool HandleItemAction(string input, bool isPotion, Action<Item> playerAction)
         {
             bool result = false;
 
