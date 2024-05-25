@@ -26,7 +26,7 @@ namespace DungeonCrawler
             if (target.HP < 0) target.HP = 0;
             return hitPower;
         }
-        public bool isDead()
+        public bool IsDead()
         {
             return HP <= 0;
         }
