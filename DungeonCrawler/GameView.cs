@@ -135,7 +135,9 @@ Stay sharp and use thy items wisely to navigate this prison and maybe overcome i
             Console.WriteLine("Something is wrong with that command spell...");
         }
         public void WarningNoItemToPickUp()
-        {}
+        {
+            Console.WriteLine("there's nothing to pick up...");
+        }
         public void WarningNotShieldOrSword()
         {}
         public void ByeBye()
