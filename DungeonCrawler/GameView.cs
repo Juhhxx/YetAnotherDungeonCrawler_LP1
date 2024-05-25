@@ -79,7 +79,7 @@ Stay sharp and use thy items wisely to navigate this prison and maybe overcome i
         }
         public void CanMove()
         {
-            Console.WriteLine("Your journey advances into the next room");
+            Console.WriteLine("Your journey advances into the next chamber");
         }
         public void CantMove()
         {
@@ -124,28 +124,28 @@ Stay sharp and use thy items wisely to navigate this prison and maybe overcome i
         }
         public void WarningItemNotInInventory()
         {
-            Console.WriteLine("What you search for is not in our possession");
+            Console.WriteLine("What thou seekest is not in thy possession.");
         }
         public void WarningNeedName()
         {
-            Console.WriteLine("Every adventurer has a name, you should be no exception");
+            Console.WriteLine("Each adventurer hath a name, thou shouldst be no exception.\nName, please?");
         }
         public void WarningWrongCommand()
         {
-            Console.WriteLine("Something is wrong with that command spell...");
+            Console.WriteLine("Something is amiss with that command spell...");
         }
         public void WarningNoItemToPickUp()
         {
-            Console.WriteLine("there's nothing to pick up...");
+            Console.WriteLine("There is naught to pick up...");
         }
         public void WarningNotShieldOrSword()
         {
-            Console.WriteLine("That's not a piece of equipment.");
+            Console.WriteLine("That is not a piece of equipment.");
         }
         public void ByeBye()
         {
-            Console.WriteLine("You wish to rest?");
-            Console.WriteLine("Very well... the dungeon will be waiting.");
+            Console.WriteLine("Thou wishest to rest?");
+            Console.WriteLine("Very well... the dungeon shall await thy return.");
         }
         public void GameOver()
         {
