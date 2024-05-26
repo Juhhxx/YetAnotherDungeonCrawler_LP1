@@ -220,3 +220,5 @@ Finally, the "Controller" element is responsible for making the connection betwe
 ```
 
 ## References
+#### Open Code
+* [Stack Overflow, How to use delegates as parameters](https://stackoverflow.com/questions/63594763/pass-a-funct-bool-as-a-parameter-using-reflection)
