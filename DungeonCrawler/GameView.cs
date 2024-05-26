@@ -207,19 +207,22 @@ Stay sharp and use thy items wisely to navigate this prison and maybe overcome i
             Console.WriteLine($"{item.Name} - {item.Type} - {item.BuffValue}");
         }
         /// <summary>
-        /// Print out a Warning that a certain item the player is looking for is not in their possession
+        /// Print out a warning that a certain item the player is looking for is not in their possession
         /// </summary>
         public void WarningItemNotInInventory()
         {
             Console.WriteLine("What thou seekest is not in thy possession.");
         }
         /// <summary>
-        /// print out a Warning that a Name is required and that progress is not possible without it
+        /// Print out a warning that a Name is required and that progress is not possible without it
         /// </summary>
         public void WarningNeedName()
         {
             Console.WriteLine("Each adventurer hath a name, thou shouldst be no exception.\nName, please?");
         }
+        /// <summary>
+        /// Print out a warning about the player having a written a wrong/mispelled command
+        /// </summary>
         public void WarningWrongCommand()
         {
             Console.WriteLine("Something is amiss with that command spell...");
