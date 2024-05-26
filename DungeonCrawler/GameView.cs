@@ -207,6 +207,14 @@ Stay sharp and use thy items wisely to navigate this prison and maybe overcome i
             Console.WriteLine($"{item.Name} - {item.Type} - {item.BuffValue}");
         }
         /// <summary>
+        /// Print ou a warning when there there are no enemies to fight
+        /// </summary>
+        public void WarningNoEnemiesToFight()
+        {
+            Console.WriteLine("There ar eno threats to annihilate. Spare your energy...");
+        }
+
+        /// <summary>
         /// Print out a warning that a certain item the player is looking for is not in their possession
         /// </summary>
         public void WarningItemNotInInventory()

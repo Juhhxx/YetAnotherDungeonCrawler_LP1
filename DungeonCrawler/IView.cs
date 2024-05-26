@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -22,6 +23,7 @@ namespace DungeonCrawler
         public void PickUpItem(Item item);
         public void EquipItem(Item item);
         public void ItemInformation(Item item);
+        public void WarningNoEnemiesToFight();
         public void WarningItemNotInInventory();
         public void WarningFullInventory();
         public void WarningNeedName();
