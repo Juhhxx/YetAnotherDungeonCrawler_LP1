@@ -25,7 +25,8 @@ namespace DungeonCrawler
             Console.ResetColor();
         }
         /// <summary>
-        /// 
+        /// A method to print out the Start Menu dialogue that comes up every single startup and the options
+        /// to Start te game or Quit
         /// </summary>
         /// <returns></returns>
         public string StartMenu()
@@ -37,6 +38,7 @@ namespace DungeonCrawler
             Console.WriteLine("Write it down... if thou knowest how to do such thing that is");
             Console.WriteLine("What hath brought thee here then?\n");
 
+            Console.WriteLine("(Write down what you want to do)");
             Console.WriteLine("New Game");
             Console.WriteLine("Quit");
 
