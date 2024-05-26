@@ -6,12 +6,17 @@ using System.Threading.Tasks;
 
 namespace DungeonCrawler
 {
+    /// <summary>
+    /// Interface with all print methods.
+    /// </summary>
     public interface IView
     {
         public string StartMenu(); 
         public void ExplainNewGame();
         public void ColoredText(string str, ConsoleColor color);
         public void RoomDescription(Room room);
+        public void EnemyDescription(Enemy enemy);
+        public void ItemDescription(Enemy enemy);
         public string AwaitDecision();
         public string AwaitBattleInput();
         public string AwaitRoomInput();
