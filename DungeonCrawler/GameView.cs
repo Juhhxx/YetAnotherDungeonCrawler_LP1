@@ -4,9 +4,17 @@ using System.Linq;
 using System.Threading.Tasks;
 
 namespace DungeonCrawler
+    /// <summary>
+    /// Class that houses all the 'View' part of the MVC model, be it for menus, other UI or simple prints
+    /// </summary>
 {
     public class GameView : IView
     {
+        /// <summary>
+        /// Method to make it easier to print colored text
+        /// </summary>
+        /// <param name="str"></param>
+        /// <param name="color"></param>
         public void ColoredText(string str, ConsoleColor color) 
         {
             //Change console foreground color
@@ -16,6 +24,11 @@ namespace DungeonCrawler
             //Reset console color
             Console.ResetColor();
         }
+        /// <summary>
+        /// A method to print out the Start Menu dialogue that comes up every single startup and the options
+        /// to Start te game or Quit
+        /// </summary>
+        /// <returns>Returns the string corresponding to the choice the player makes about wether to start or quit</returns>
         public string StartMenu()
         {
             Console.WriteLine("|-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-|");
@@ -25,8 +38,8 @@ namespace DungeonCrawler
             Console.WriteLine("Write it down... if thou knowest how to do such thing that is");
             Console.WriteLine("What hath brought thee here then?\n");
 
+            Console.WriteLine("(Write down what you want to do)");
             Console.WriteLine("New Game");
-            Console.WriteLine("Continue");
             Console.WriteLine("Quit");
 
             Console.Write(">");
@@ -35,7 +48,11 @@ namespace DungeonCrawler
 
             return s;
         }
-
+        /// <summary>
+        /// A group of prints that aim to give a little bit of a flavorful introduction to the game setting and
+        /// at the same time, inform the player about the objectives in the game and how to interact with the game
+        /// text-based action system, while informing them how to navigate the dungeon
+        /// </summary>
         public void ExplainNewGame()
         {
             Console.WriteLine("|-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-|");
@@ -61,24 +78,41 @@ I am here not only to challenge thee but to guide thee through it as well:
 Stay sharp and use thy items wisely to navigate this prison and maybe overcome it...");
             Console.WriteLine("|-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-|");
         }
-        
+        /// <summary>
+        /// prints out the description of a specific room
+        /// </summary>
+        /// <param name="room"></param>
         public void RoomDescription(Room room)
         {
             Console.WriteLine(room.Description);
         }
+        /// <summary>
+        /// This method is aiming to be a general non-specific input request
+        /// </summary>
+        /// <returns>String with player's input</returns>
         public string AwaitDecision()
         {
+            Console.WriteLine("What will you do, adventurer?");
             Console.Write(">");
             string s = Console.ReadLine();
             return s;
         }
+        /// <summary>
+        /// This method is for requesting the player's input in a battle situation
+        /// </summary>
+        /// <returns>String with player's input</returns>
         public string AwaitBattleInput()
         {
             Console.WriteLine("The battlefield is ready for your decision. Quick!");
+            Console.WriteLine("1 - Attack    2 - Heal");
             Console.Write(">");
             string s = Console.ReadLine();
             return s;
         }
+        /// <summary>
+        /// This method is for requesting the player's input when th player is exploring a room
+        /// </summary>
+        /// <returns>String with player's input</returns>
         public string AwaitRoomInput()
         {
             Console.WriteLine("The dungeon awaiteth thy decision...");
@@ -86,18 +120,29 @@ Stay sharp and use thy items wisely to navigate this prison and maybe overcome i
             string s = Console.ReadLine();
             return s;
         }
-
-        public void AttackResult(Character characterActive, Character characterPassive )
+        /// <summary>
+        /// Print the result of an Attack executed by one Character on another
+        /// </summary>
+        /// <param name="characterActive"></param>
+        /// <param name="characterPassive"></param>
+        /// <param name="hitPower"></param>
+        public void AttackResult(Character characterActive, Character characterPassive, int hitPower)
         {
             Console.WriteLine($"{characterActive.Name} attacked {characterPassive} for {characterActive.Attack(characterPassive)} damage!");
         }
+        /// <summary>
+        /// Print that accompanies a communicates to the player that he has moved to the next room
+        /// </summary>
         public void CanMove()
         {
             Console.WriteLine("Your journey advances into the next chamber");
         }
+        /// <summary>
+        /// Print affirming the player can't move that way when exploring rooms
+        /// </summary>
         public void CantMove()
         {
-            Console.WriteLine("Not through there");
+            Console.WriteLine("Thy can not pass through there");
         }
         public void HealResult(Item potion)
         {
