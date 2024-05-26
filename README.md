@@ -29,7 +29,6 @@ Comçando pelo Main() dá-se uma instanciação de um objeto GameManager, chaman
 1. **Enum BuffTypes**
 2. **Interface IView**
 3. **Class Character**
-   - Responsável por 
 4. **Class Enemy : Character**
 5. **Class Player : Character**
 6. **Class GameInitializer**
@@ -39,10 +38,44 @@ Comçando pelo Main() dá-se uma instanciação de um objeto GameManager, chaman
 10. **Interface IView**
     
 
-### Fluxograma
+### Gráfico UML
 
 ```mermaid
-graph TB
+    classDiagram
+        class GameView
+        class IView
+        <<interface>> IView
+        class Controller
+        class GameInitializer
+        class Character
+        class Player
+        class Enemy
+        class Item
+        class BuffType
+        <<enumeration>> BuffType
+        class Room
+        
+        Controller --> GameView
+        Controller --> Player
+        Controller --> GameInitializer
+
+        Room --> Item
+        Room --> Enemy
+
+        GameInitializer o-- Item
+        GameInitializer o-- Enemy
+        GameInitializer o-- Room
+        GameInitializer --> Player
+
+        Player --> Room
+        Player o-- Item
+
+        Item --> BuffType
+        
+        Player --|> Character
+        Enemy --|> Character
+
+        GameView ..|> IView
 ```
 
 ## Referências
