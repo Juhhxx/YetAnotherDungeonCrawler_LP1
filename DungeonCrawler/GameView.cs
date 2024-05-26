@@ -152,6 +152,11 @@ Stay sharp and use thy items wisely to navigate this prison and maybe overcome i
         {
             Console.WriteLine($"You heal for {potion.BuffValue}");
         }
+        /// <summary>
+        /// Prints out a little menu to show the Playerps HP, Attack Power, Defense as well as
+        /// the buffs (in dark green) applied to their base stats (in dark blue)
+        /// </summary>
+        /// <param name="character"></param>
         public void PlayerStatus(Player character)
         {     
             Console.WriteLine(@$"
