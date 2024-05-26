@@ -223,3 +223,5 @@ Finally, the "Controller" element is responsible for making the connection betwe
 ```
 
 ## References
+
+No References nor 3rd party opinions/help were used in this project.
