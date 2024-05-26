@@ -18,9 +18,11 @@ namespace DungeonCrawler
         public Item RItem { get; private set; }
         public string Description { get; }
         public bool IsFinal { get; }
+        public string Name;
 
-        public Room(string description, Enemy enemy, Item item)
+        public Room(string name,string description, Enemy enemy, Item item)
         {
+            Name = name;
             Description = description;
             REnemy = enemy;
             RItem = item;
