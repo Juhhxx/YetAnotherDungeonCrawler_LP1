@@ -109,10 +109,44 @@ Começando pelo Main() dá-se uma instanciação de um objeto GameManager, chama
 
 1. **Class Controller**
 
-### Fluxograma
+### Gráfico UML
 
 ```mermaid
-graph TB
+    classDiagram
+        class GameView
+        class IView
+        <<interface>> IView
+        class Controller
+        class GameInitializer
+        class Character
+        class Player
+        class Enemy
+        class Item
+        class BuffType
+        <<enumeration>> BuffType
+        class Room
+        
+        Controller --> GameView
+        Controller --> Player
+        Controller --> GameInitializer
+
+        Room --> Item
+        Room --> Enemy
+
+        GameInitializer o-- Item
+        GameInitializer o-- Enemy
+        GameInitializer o-- Room
+        GameInitializer --> Player
+
+        Player --> Room
+        Player o-- Item
+
+        Item --> BuffType
+        
+        Player --|> Character
+        Enemy --|> Character
+
+        GameView ..|> IView
 ```
 
 ## Referências
