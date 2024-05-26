@@ -207,6 +207,18 @@ Stay sharp and use thy items wisely to navigate this prison and maybe overcome i
             Console.WriteLine($"{item.Name} - {item.Type} - {item.BuffValue}");
         }
         /// <summary>
+        /// print a request for which item the player wants to use
+        /// </summary>
+        /// <returns>String of the name of the item the player wants to use</returns>
+        public string ItemToUSe()
+        {
+            Console.WriteLine("Pick your tool. Use it Wisely...");
+            Console.Write(">");
+            string s = Console.ReadLine();
+            return s;
+        }
+
+        /// <summary>
         /// Print ou a warning when there there are no enemies to fight
         /// </summary>
         public void WarningNoEnemiesToFight()

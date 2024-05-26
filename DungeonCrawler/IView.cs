@@ -23,6 +23,7 @@ namespace DungeonCrawler
         public void PickUpItem(Item item);
         public void EquipItem(Item item);
         public void ItemInformation(Item item);
+        public string ItemToUSe();
         public void WarningNoEnemiesToFight();
         public void WarningItemNotInInventory();
         public void WarningFullInventory();
