@@ -39,7 +39,7 @@ Finally, the "Controller" element is responsible for making the connection betwe
 3. **Rooms.txt**
     - File that  is, in all practical regards, the map. Every single room is numbered and contains:
         - **Description**
-        - **Information on if there is or not a room in the each of the 4 cardinal direction, specifying the number of the room in case there is any in such specific direction**
+        - **Information on if there is or not a room in the each of the 4 cardinal direction (North, West, South and East), specifying said rooms' names in the such rooms do exist in those directions**
         - **Information on if there is an enemy present in the room, specifying its name in such occasion**
         - **Information on if there is an item present in the room, specifying its name in such occasion**
   
