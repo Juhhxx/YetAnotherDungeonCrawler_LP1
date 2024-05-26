@@ -65,6 +65,8 @@ Começando pelo Main() dá-se uma instanciação de um objeto GameManager, chama
         - **private Item NullOrValue(string param,Item variable)** - Find if a specified variable should be null or have a value. If param is "-" the variable is null, if else the variable is equals to param. Returns the value to be set;
         - **private void SetUpRoomDirections()** - Set up the Rooms instances directions;
 6. **Class Item**
+    -This class does not contain anything besides the constructor for an Item object and some properties corresponding to the  traits an item can have (**Name**, **Type** and **Buff Value**);
+
 7. **Class Room**
 
 ### View - Descrição
