@@ -29,8 +29,10 @@ Com isto, Model é responsável pela lógica, manipulando dados de forma a efeti
 Começando pelo Main() dá-se uma instanciação de um objeto GameManager, chamando de seguida o método GameStart()
 
 1. **Enum BuffTypes**
+    - Enum containing the 3 different types of stat buffs that can exist: HP, Attack and Defense buffs.
+
 2. **Class Character**
-   - This is an abstract class that serves as the base for any character in the game, with the purpose of being extended in order to create more role-specific character like a player or enemy. As such
+    - This is an abstract class that serves as the base for any character in the game, with the purpose of being extended in order to create more role-specific character like a player or enemy. As such
 
       - **public int Attack(Character target)** - Method for combat between characters. It calculates the hit power of an attack by by first removing the targets defense out of the value and clamping it to 0,  and then applying the remaining value to the target's HP and clamping it to 0, returning the hit power of the attack.
       - **public bool IsDead()** - Method that sees if the character is dead by checking if **HP <= 0**, returning the boolean resulting from it.
