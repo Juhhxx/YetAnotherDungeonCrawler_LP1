@@ -190,6 +190,11 @@ Stay sharp and use thy items wisely to navigate this prison and maybe overcome i
         {
             Console.WriteLine($"You added {item.Name} to your inventory.");
         }
+        public void EquipItem(Item item)
+        {
+            Console.WriteLine($"You equipped {item.Name}.");
+        }
+
         public void ItemInformation(Item item)
         {
             Console.WriteLine($"{item.Name} - {item.Type} - {item.BuffValue}");
