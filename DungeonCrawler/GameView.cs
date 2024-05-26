@@ -79,7 +79,7 @@ Stay sharp and use thy items wisely to navigate this prison and maybe overcome i
             Console.WriteLine("|-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-|");
         }
         /// <summary>
-        /// prints out the description of a specific room
+        /// Prints out the description of a specific room
         /// </summary>
         /// <param name="room"></param>
         public void RoomDescription(Room room)
@@ -153,7 +153,7 @@ Stay sharp and use thy items wisely to navigate this prison and maybe overcome i
             Console.WriteLine("Thy can not pass through there");
         }
         /// <summary>
-        /// /Print to communicate that the player has healed themselves for a certain value
+        /// Print to communicate that the player has healed themselves for a certain value
         /// </summary>
         /// <param name="potion"></param>
         public void HealResult(Item potion)
@@ -203,7 +203,7 @@ Stay sharp and use thy items wisely to navigate this prison and maybe overcome i
             return s;
         }
         /// <summary>
-        /// Print to communicate that the player picked up an item
+        /// Print a sentence onto the console to communicate that the player picked up an item
         /// </summary>
         /// <param name="item"></param>
         public void PickUpItem(Item item)
@@ -211,7 +211,7 @@ Stay sharp and use thy items wisely to navigate this prison and maybe overcome i
             Console.WriteLine($"You added {item.Name} to your inventory.");
         }
         /// <summary>
-        /// print to communicate that the player equipped an item
+        /// Print a sentence onto the console to communicate that the player equipped an item
         /// </summary>
         /// <param name="item"></param>
         public void EquipItem(Item item)
@@ -227,7 +227,7 @@ Stay sharp and use thy items wisely to navigate this prison and maybe overcome i
             Console.WriteLine($"{item.Name} - {item.Type} - {item.BuffValue}");
         }
         /// <summary>
-        /// print a request for which item the player wants to use
+        /// Print a request for input on which item the player wants to use
         /// </summary>
         /// <returns>String of the name of the item the player wants to use</returns>
         public string ItemToUse()
@@ -239,7 +239,7 @@ Stay sharp and use thy items wisely to navigate this prison and maybe overcome i
         }
 
         /// <summary>
-        /// Print ou a warning when there there are no enemies to fight
+        /// Print out a warning when there there are no enemies to fight
         /// </summary>
         public void WarningNoEnemiesToFight()
         {
@@ -261,7 +261,7 @@ Stay sharp and use thy items wisely to navigate this prison and maybe overcome i
             Console.WriteLine("It seems your inventory is too full to carry yet another item. ");
         }
         /// <summary>
-        /// Print out a warning that a Name is required and that progress is not possible without it
+        /// Print out a warning that a name is required and that progress is not possible without it
         /// </summary>
         public void WarningNeedName()
         {
@@ -309,6 +309,7 @@ Stay sharp and use thy items wisely to navigate this prison and maybe overcome i
         public void GameWin()
         {
             Console.WriteLine("Triumphant victory!");
+            Console.WriteLine("THE DUNGEON STANDS NO CHANCE BEFORE YOUR MIGHT!");
         }
     }
 }
