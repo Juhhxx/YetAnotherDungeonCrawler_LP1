@@ -182,7 +182,11 @@ Stay sharp and use thy items wisely to navigate this prison and maybe overcome i
             Console.WriteLine(@$"
 |-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-|");
         }
-        public void PickupItem(Item item)
+        /// <summary>
+        /// Print to communicate that te player picked up an item
+        /// </summary>
+        /// <param name="item"></param>
+        public void PickUpItem(Item item)
         {
             Console.WriteLine($"You added {item.Name} to your inventory.");
         }
