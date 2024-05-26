@@ -71,7 +71,7 @@ I am here not only to challenge thee but to guide thee through it as well:
         .'Heal' - Use it in or out of battles to select a potion if you have any in order to heal up
         .'Pick up item' - If there is an item in the room you're in, use this to pick it up
         .'Equip' - Use it to equip //ver como vai se ro processo de selção de items
-        .'Inventory' - Use it to open your invotry and chekc your items 
+        .'Inventory' - Use it to open your inventory and check your items 
 3. Each chamber is different and may or may not lead to another chamber depending on which direction thou choose to follow.
 4. Each chamber may contain an item or/and an opponent, in which case victory in battle is obligatory to proceed!
 
@@ -161,7 +161,7 @@ Stay sharp and use thy items wisely to navigate this prison and maybe overcome i
             Console.WriteLine($"You heal for {potion.BuffValue}");
         }
         /// <summary>
-        /// Prints out a little menu to show the Playerps HP, Attack Power, Defense as well as
+        /// Prints out a little menu to show the Player's HP, Attack Power, Defense as well as
         /// the buffs (in dark green) applied to their base stats (in dark blue)
         /// </summary>
         /// <param name="character"></param>
@@ -230,7 +230,7 @@ Stay sharp and use thy items wisely to navigate this prison and maybe overcome i
         /// print a request for which item the player wants to use
         /// </summary>
         /// <returns>String of the name of the item the player wants to use</returns>
-        public string ItemToUSe()
+        public string ItemToUse()
         {
             Console.WriteLine("Pick your tool. Use it Wisely...");
             Console.Write(">");
@@ -243,7 +243,7 @@ Stay sharp and use thy items wisely to navigate this prison and maybe overcome i
         /// </summary>
         public void WarningNoEnemiesToFight()
         {
-            Console.WriteLine("There ar eno threats to annihilate. Spare your energy...");
+            Console.WriteLine("There are no threats to annihilate. Spare your energy...");
         }
 
         /// <summary>
@@ -258,7 +258,7 @@ Stay sharp and use thy items wisely to navigate this prison and maybe overcome i
         /// </summary>
         public void WarningFullInventory()
         {
-            Console.WriteLine("It seems your invetory is too full to carry yet another item. ");
+            Console.WriteLine("It seems your inventory is too full to carry yet another item. ");
         }
         /// <summary>
         /// Print out a warning that a Name is required and that progress is not possible without it
@@ -268,7 +268,7 @@ Stay sharp and use thy items wisely to navigate this prison and maybe overcome i
             Console.WriteLine("Each adventurer hath a name, thou shouldst be no exception.\nName, please?");
         }
         /// <summary>
-        /// Print out a warning about the player having a written a wrong/mispelled command
+        /// Print out a warning about the player having a written a wrong/misspelled command
         /// </summary>
         public void WarningWrongCommand()
         {

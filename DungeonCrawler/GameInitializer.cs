@@ -8,80 +8,111 @@ namespace DungeonCrawler
 {
     public class GameInitializer
     {
+        // Dictionaries to store instances of objects
         Dictionary<string,Enemy> enemyDict = new Dictionary<string, Enemy>();
         Dictionary<string,Item> itemDict = new Dictionary<string, Item>();
         Dictionary<string,Room> roomDict = new Dictionary<string, Room>();
         // String used to analyze the files
         string s;
         // Enemy variables
-        private string eName;
-        private int eHP;
-        private int eAtck;
-        private int eDef;
+        private string eName; // Enemy name
+        private int eHP; // Enemy HP
+        private int eAtck; // Enemt Attack Power
+        private int eDef; // Enemy Defence
         // Item variables
-        private string iName;
-        private BuffType iType;
-        private int iValue;
+        private string iName; // Item Name
+        private BuffType iType; // Item Buff Type
+        private int iValue; // Item Buff Value
         // Room variables
-        private string rName;
-        private string rDesc;
-        private Enemy rEnemy;
-        private Item rItem;
-        private List<string[]> roomDirectionsList = new List<string[]>();
-        private string[] roomDirections;
-        private string rNorth;
-        private string rSouth;
-        private string rEast;
-        private string rWest;
-        // Bool value to know when an instance ir ready
+        private string rName; // Room Name
+        private string rDesc; // Room Description
+        private Enemy rEnemy; // Room Enemy
+        private Item rItem; // Room Item
+        private List<string[]> roomDirectionsList = new List<string[]>(); // List to store iformation about the directions of all Rooms
+        private string[] roomDirections; // Array to store what's on each direction of a Room
+        private string rNorth; // North direction of a Room
+        private string rSouth; // South direction of a Room
+        private string rEast; // East direction of a Room
+        private string rWest; // West direction of a Room
+        // Bool value to know when all parameters are ready to instantiate an object
         private bool instanceReady = false;
-        // Initial path for GameFiles
+        // Initial path for GameFiles folder
         private string pathFolder = Path.Combine("DungeonCrawler","GameFiles");
+        // Variable to sotre the Player
         private Player player;
+        /// <summary>
+        /// Constructor for GameInitializer class.
+        /// </summary>
+        /// <param name="player">Player Character</param>
         public GameInitializer(Player player)
         {
+            // Set the instance variable player as the given player
             this.player = player;
         }
+        /// <summary>
+        /// Call all of the initializer methods to start the game.
+        /// </summary>
         public void InitializeGame()
         {
+            // Initialize Enemies
             InitializeEnemies();
+            // Initialize Items
             InitializeItems();
+            // Initialize Rooms
             InitializeRooms();
+            // Set the player in Room1
             player.SetInitialRoom(roomDict["Room1"]);
         }
+        /// <summary>
+        /// Initialize all Enemy instances given in the Enemies.txt file.
+        /// </summary>
         private void InitializeEnemies()
         {
+            // Complete path to file
             string pathFile = Path.Combine(pathFolder,"Enemies.txt");
+            // Initialize StreamReader with specific file
             using StreamReader sr = new StreamReader(pathFile);
-
+            // While the line that is being read is not END do
             while ((s = sr.ReadLine()) != "END")
             {
+                // If the line being read isn't empty
                 if (s != "")
                 {
+                    // If the line being read starts with # continue on
                     if (s[0] == '#') continue;
+                    // If not analyze it
                     else 
                     {
+                        // Split the line by the ":" char
                         string[] parameters = s.Split(":");
-
+                        // Analyze the first part
                         switch(parameters[0])
                         {
-                            case "Name":
+                            case "Name": // If equals Name
+                                // Set eName as second part
                                 eName = parameters[1];
                                 break;
-                            case "HP":
+                            case "HP": // If equals HP
+                                // Set eHP as second part
                                 eHP = int.Parse(parameters[1]);
                                 break;
-                            case "AttackPower":
+                            case "AttackPower": // If equals AttackPower
+                                // Set eAtck as second part
                                 eAtck = int.Parse(parameters[1]);
                                 break;
-                            case "Defense":
+                            case "Defense": // If equals Defense
+                                // Set eDef as second part
                                 eDef = int.Parse(parameters[1]);
+                                // Set instanceReady as true
                                 instanceReady = true;
                                 break;
                         }
+                        // If instanceReady is true
                         if (instanceReady)
                         {
+                            // Add new entry to enemyDict (eName,new Enemy instance)
                             enemyDict.Add(eName,new Enemy(eName,eHP,eAtck,eDef));
+                            // Set isntanceReady as false
                             instanceReady = false;
                         }
                     }
@@ -92,36 +123,52 @@ namespace DungeonCrawler
             //     Console.WriteLine($"{kvp.Key} : {kvp.Value.HP}, {kvp.Value.AttackPower}, {kvp.Value.Defense}");
             // } 
         }
+        /// <summary>
+        /// Initialize all Item instances given in the Items.txt file.
+        /// </summary>
         private void InitializeItems()
         {
+            // Complete path to file
             string pathFile = Path.Combine(pathFolder,"Items.txt");
+            // Initialize StreamReader with specific file
             using StreamReader sr = new StreamReader(pathFile);
-
+            // While the line that is being read is not END do
             while ((s = sr.ReadLine()) != "END")
             {
+                // If the line being read isn't empty
                 if (s != "")
                 {
+                    // If the line being read starts with # continue on
                     if (s[0] == '#') continue;
+                    // If not analyze it
                     else 
                     {
+                        // Split the line by the ":" char
                         string[] parameters = s.Split(":");
-
+                        // Analyze the first part
                         switch(parameters[0])
                         {
-                            case "Name":
+                            case "Name": // If equals Name
+                                // Set iName as second part
                                 iName = parameters[1];
                                 break;
-                            case "BuffType":
+                            case "BuffType": // If equals BuffType
+                                // Set iType as second part
                                 iType = Enum.Parse<BuffType>(parameters[1]);
                                 break;
-                            case "BuffValue":
+                            case "BuffValue": // If equals BuffValue
+                                // Set iValue as second part
                                 iValue = int.Parse(parameters[1]);
+                                // Set instanceReady as true
                                 instanceReady = true;
                                 break;
                         }
+                        // Is instanceReady is true
                         if (instanceReady)
                         {
+                            // Add new entry to itemDict (iName, new Item instance)
                             itemDict.Add(iName,new Item(iName,iType,iValue));
+                            // Set isntanceReady as false
                             instanceReady = false;
                         }
                     }
@@ -132,53 +179,76 @@ namespace DungeonCrawler
             //     Console.WriteLine($"{kvp.Key} : {kvp.Value.Type.ToString()}, {kvp.Value.BuffValue}");
             // } 
         }
+        /// <summary>
+        /// Initialize all the Room instances give in the Rooms.txt file.
+        /// </summary>
         private void InitializeRooms()
         {
+            // Complete path to file
             string pathFile = Path.Combine(pathFolder,"Rooms.txt");
+            // Initialize StreamReader with specific file
             using StreamReader sr = new StreamReader(pathFile);
-
+            // While the line that is being read is not END do
             while ((s = sr.ReadLine()) != "END")
             {
+                // If the line being read isn't empty
                 if (s != "")
                 {
+                    // If the line being read starts with # continue on
                     if (s[0] == '#') continue;
+                    // If not analyze it
                     else 
                     {
+                        // Split the line by the ":" char
                         string[] parameters = s.Split(":");
-
+                        // Analyze the first part
                         switch(parameters[0])
                         {
-                            case "Name":
+                            case "Name": // If equals Name
+                                // Set rName as second part
                                 rName = parameters[1];
                                 break;
-                            case "Description":
+                            case "Description": // If equals Description
+                                // Set rDescription as second part
                                 rDesc = parameters[1];
                                 break;
-                            case "North":
+                            case "North": // If equals North
+                                // Set rNorth as second part
                                 rNorth = NullOrValue(parameters[1],rNorth);
                                 break;
-                            case "South":
+                            case "South": // If equals South
+                                // Set rSouth as second part
                                 rSouth = NullOrValue(parameters[1],rSouth);
                                 break;
-                            case "East":
+                            case "East": // If equals East
+                                // Set rEast as second part
                                 rEast = NullOrValue(parameters[1],rEast);
                                 break;
-                            case "West":
+                            case "West": // If equals West
+                                // Set rWest as second part
                                 rWest = NullOrValue(parameters[1],rWest);
                                 break;
-                            case "Enemy":
+                            case "Enemy": // If equals Enemy
+                                // Set rEnemy as second part
                                 rEnemy = NullOrValue(parameters[1],rEnemy);
                                 break;
-                            case "Item":
+                            case "Item": // If equals Item
+                                // Set rItem has second part
                                 rItem = NullOrValue(parameters[1],rItem);
+                                // Set instanceReady as true
                                 instanceReady = true;
                                 break;
                         }
+                        // If instaceReady is true
                         if (instanceReady)
                         {
+                            // Create new string array wit all four direcion variables
                             roomDirections = new string[4] { rNorth, rSouth, rEast, rWest };
+                            // Add the roomDirections array to a list
                             roomDirectionsList.Add(roomDirections);
+                            // Add new entry to roomDict (rNmae, new Room instance)
                             roomDict.Add(rName,new Room(rDesc,rEnemy,rItem));
+                            // Set instanceReady to false
                             instanceReady = false;
                         }
                     }
@@ -191,41 +261,76 @@ namespace DungeonCrawler
             //     Console.WriteLine($"{kvp.Key}\nNorth:{kvp.Value.accessRooms["north"]}\nSouth:{kvp.Value.accessRooms["south"]}\nEast:{kvp.Value.accessRooms["east"]}\nWest:{kvp.Value.accessRooms["west"]}");
             // } 
         }
+        /// <summary>
+        /// Find if a specified varaible should be null or have a value.
+        /// If param is "-" the variable is null, if else the variable is equals to param.
+        /// </summary>
+        /// <param name="param">Parameter to be evaluated.</param>
+        /// <param name="variable">Varable to be set.</param>
+        /// <returns>Value to be set.</returns>
         private string NullOrValue(string param,string variable)
         {
+            // Check if param not equals "-"
             if (param != "-")
+                // If true set variable as param
                 variable = param;
             else
+                // If  fase set variable as null
                 variable = null;
-
+            // Return variable
             return variable;
         }
+        /// <summary>
+        /// Find if a specified varaible should be null or have a value.
+        /// If param is "-" the variable is null, if else the variable is equals to param.
+        /// </summary>
+        /// <param name="param">Parameter to be evaluated.</param>
+        /// <param name="variable">Varable to be set.</param>
+        /// <returns>Value to be set.</returns>
         private Enemy NullOrValue(string param,Enemy variable)
         {
+            // Check if param not equals "-"
             if (param != "-")
+                // If true set variable as param
                 variable = enemyDict[param];
             else
+                // If  fase set variable as null
                 variable = null;
-                
+            // Return variable
             return variable;
         }
+        /// <summary>
+        /// Find if a specified varaible should be null or have a value.
+        /// If param is "-" the variable is null, if else the variable is equals to param.
+        /// </summary>
+        /// <param name="param">Parameter to be evaluated.</param>
+        /// <param name="variable">Varable to be set.</param>
+        /// <returns>Value to be set.</returns>
         private Item NullOrValue(string param,Item variable)
         {
+            // Check if param not equals "-"
             if (param != "-")
+                // If true set variable as param
                 variable = itemDict[param];
             else
+                // If  fase set variable as null
                 variable = null;
-                
+            // Return variable
             return variable;
         }
+        /// <summary>
+        /// Set up the Rooms isntances directions.
+        /// </summary>
         private void SetUpRoomDirections()
         {
+            // Start idx at 0
             int idx = 0;
-
+            // Go throught every entry in roomDict
             foreach (KeyValuePair<string,Room> kvp in roomDict)
             {
+                // Get the correct roomDirection array
                 string[] roomDir = roomDirectionsList[idx];
-
+                // Set all cardinal directions
                 if (roomDir[0] != null)
                     kvp.Value.AddRoom("north",roomDict[roomDir[0]]);
                 if (roomDir[1] != null)
@@ -234,7 +339,7 @@ namespace DungeonCrawler
                     kvp.Value.AddRoom("east",roomDict[roomDir[2]]);
                 if (roomDir[3] != null)
                     kvp.Value.AddRoom("west",roomDict[roomDir[3]]);
-
+                // Increment idx by 1
                 idx++;
             } 
         }

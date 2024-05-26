@@ -40,7 +40,7 @@ namespace DungeonCrawler
                         view.ExplainNewGame();
                         init.InitializeGame();
 
-                        // start new game ?
+                        // start new game
 
                         StartGameLoop();
                         break;
@@ -162,13 +162,14 @@ namespace DungeonCrawler
                     else
                     {
                         // print warning - inventory full
+                        view.WarningFullInventory();
                     }
                     
                 }
                 else
                 {
                     // print warning - item is the wrong type
-                    view.WarningNotShieldOrSword();
+                    view.WarningWrongItem();
                 }
             }
         }
@@ -182,6 +183,7 @@ namespace DungeonCrawler
             else
             {
                 // print warning - there is no enemy to fight
+                view.WarningNoEnemiesToFight();
             }
         }
         public bool HandleHealAction()
@@ -189,7 +191,7 @@ namespace DungeonCrawler
             bool result = false;
             
             // print - ask which item they want to use
-            string input = view.AwaitDecision().Trim().ToLower();
+            string input = view.ItemToUse().Trim().ToLower();
 
             try
             {
@@ -224,7 +226,7 @@ namespace DungeonCrawler
             {
                 // print - ask if they wanna take the item or not
 
-                input = view.AwaitDecision().Trim().ToLower();
+                input = view.AskPickUpItem(item).Trim().ToLower();
 
                 if ( input == "take" )
                 {
@@ -269,6 +271,7 @@ namespace DungeonCrawler
                             if (enemy.IsDead())
                             {
                                 // print outcome - you won the battle
+                                view.BattleWin();
                                 return;
                             }
                             hasActed = true;
@@ -280,7 +283,6 @@ namespace DungeonCrawler
                             if (inputArray[1] == "status")
                             {
                                 view.PlayerStatus(player);
-                                hasActed = true;
                                 break;
                             }
                             // print warning - command was wrong
