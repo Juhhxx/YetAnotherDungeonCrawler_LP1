@@ -130,6 +130,9 @@ Stay sharp and use thy items wisely to navigate this prison and maybe overcome i
         {
             Console.WriteLine($"{characterActive.Name} attacked {characterPassive} for {characterActive.Attack(characterPassive)} damage!");
         }
+        /// <summary>
+        /// Print affirming the player can't move that way when exploring rooms
+        /// </summary>
         public void CanMove()
         {
             Console.WriteLine("Your journey advances into the next chamber");
