@@ -156,7 +156,8 @@ namespace DungeonCrawler
                 {
                     if ( playerAction(newItem) )
                     {
-                        view.PickupItem(newItem);
+                        if (isPotion) view.PickUpItem(newItem);
+                        else view.EquipItem(newItem);
                     }
                     else
                     {
