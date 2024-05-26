@@ -198,7 +198,10 @@ Stay sharp and use thy items wisely to navigate this prison and maybe overcome i
         {
             Console.WriteLine($"You equipped {item.Name}.");
         }
-
+        /// <summary>
+        /// Print the details of each item: Name, type (sword, shield or potion) and its buff value
+        /// </summary>
+        /// <param name="item"></param>
         public void ItemInformation(Item item)
         {
             Console.WriteLine($"{item.Name} - {item.Type} - {item.BuffValue}");
