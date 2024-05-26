@@ -214,6 +214,13 @@ Stay sharp and use thy items wisely to navigate this prison and maybe overcome i
             Console.WriteLine("What thou seekest is not in thy possession.");
         }
         /// <summary>
+        /// Print out a warning about the player's inventory being full
+        /// </summary>
+        public void WarningFullInventory()
+        {
+            Console.WriteLine("It seems your invetory is too full to carry yet another item. ");
+        }
+        /// <summary>
         /// Print out a warning that a Name is required and that progress is not possible without it
         /// </summary>
         public void WarningNeedName()
