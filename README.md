@@ -22,12 +22,10 @@ A work by:
 - Mariana Martins - a22302203
     - Responsible for:
         - Code in Controller class
-        - Code in Player class
-        - Code in Character class
-        - Code in Enemy class
+        - Structure od Character class and subclasses (Player and Enemy)
         - BuffType Enum
         - Code in Room class
-        - Documentation in Item class
+        - Code in Item class
 
 
 [Git repository URL](https://github.com/Juhhxx/YetAnotherDungeonCrawler_LP1)
