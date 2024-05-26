@@ -120,7 +120,12 @@ Stay sharp and use thy items wisely to navigate this prison and maybe overcome i
             string s = Console.ReadLine();
             return s;
         }
-
+        /// <summary>
+        /// Print the result of an Attack executed by one Character on another
+        /// </summary>
+        /// <param name="characterActive"></param>
+        /// <param name="characterPassive"></param>
+        /// <param name="hitPower"></param>
         public void AttackResult(Character characterActive, Character characterPassive, int hitPower)
         {
             Console.WriteLine($"{characterActive.Name} attacked {characterPassive} for {characterActive.Attack(characterPassive)} damage!");
