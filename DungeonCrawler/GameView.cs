@@ -241,6 +241,9 @@ Stay sharp and use thy items wisely to navigate this prison and maybe overcome i
         {
             Console.WriteLine("That is not a piece of equipment.");
         }
+        /// <summary>
+        /// Print out a goodbye message for the player when he quits the game
+        /// </summary>
         public void ByeBye()
         {
             Console.WriteLine("Thou wishest to rest?");
