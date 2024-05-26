@@ -9,8 +9,8 @@
 # Item:[Item in the Room]
 #
 # All fields except Name and Description can be set to null by using a "-"
-# The room block named Initial Room will be the room where the player spawns, 
-# and the room block named Final Room will be the final room
+# The room block named *Initial Room* will be the room where the player spawns, 
+# and the room block named *Final Room* will be the final room
 
 Name:Initial Room
 Description:You see a menacing figure in the middle of the Room1

@@ -65,8 +65,10 @@ namespace DungeonCrawler
             InitializeItems();
             // Initialize Rooms
             InitializeRooms();
-            // Set the player in Room1
-            player.SetInitialRoom(roomDict["Room1"]);
+            // Set the player in Initial Room
+            player.SetInitialRoom(roomDict["Initial Room"]);
+            // Set Final Room
+            roomDict["Final Room"].SetAsFinalRoom();
         }
         /// <summary>
         /// Initialize all Enemy instances given in the Enemies.txt file.
