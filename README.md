@@ -26,7 +26,7 @@ Com isto, Model é responsável pela lógica, manipulando dados de forma a efeti
 
 ### Model - Descrição
 
-Comçando pelo Main() dá-se uma instanciação de um objeto GameManager, chamando de seguida o método GameStart()
+Começando pelo Main() dá-se uma instanciação de um objeto GameManager, chamando de seguida o método GameStart()
 
 1. **Enum BuffTypes**
 2. **Class Character**
@@ -41,7 +41,66 @@ Comçando pelo Main() dá-se uma instanciação de um objeto GameManager, chaman
 ### View - Descrição
 
 1. **Interface IView**
+    - Contém todos os métodos a ser implementados pela classe GameView:
+      - **string StartMenu()** .
+      - **void ExplainNewGame()** .
+      - **void ColoredText(string str, ConsoleColor color)** .
+      - **void RoomDescription(Room room)** .
+      - **string AwaitDecision()** .
+      - **string AwaitBattleInput()** .
+      - **string AwaitRoomInput()** .
+      - **void AttackResult(Character characterActive, Character characterPassive, int hitPower )** .
+      - **void BattleWin()** .
+      - **void CantMove()** .
+      - **void CanMove()** .
+      - **void HealResult(Item potion)** .
+      - **void PlayerStatus(Player character)** .
+      - **string AskPickUpItem(Item item)** .
+      - **void PickUpItem(Item item)** .
+      - **void EquipItem(Item item)** .
+      - **void ItemInformation(Item item)** .
+      - **string ItemToUse()** .
+      - **void WarningNoEnemiesToFight()** .
+      - **void WarningItemNotInInventory()** .
+      - **void WarningFullInventory()** .
+      - **void WarningNeedName()** .
+      - **void WarningWrongCommand()** .
+      - **void WarningNoItemToPickUp()** .
+      - **void WarningWrongItem()** .
+      - **void ByeBye()** .
+      - **void GameOver()** .
+      - **void GameWin()** .
+  
 2. **Classe GameView**
+   - Contém todos os métodos a ser implementados pela classe GameView:
+      - **string StartMenu()** -
+      - **void ExplainNewGame()** -
+      - **void ColoredText(string str, ConsoleColor color)** -
+      - **void RoomDescription(Room room)** -
+      - **string AwaitDecision()** -
+      - **string AwaitBattleInput()** -
+      - **string AwaitRoomInput()** -
+      - **void AttackResult(Character characterActive, Character characterPassive, int hitPower )** -
+      - **void BattleWin()** -
+      - **void CantMove()** -
+      - **void CanMove()** -
+      - **void HealResult(Item potion)** -
+      - **void PlayerStatus(Player character)** -
+      - **string AskPickUpItem(Item item)** -
+      - **void PickUpItem(Item item)** -
+      - **void EquipItem(Item item)** -
+      - **void ItemInformation(Item item)** -
+      - **string ItemToUse()** -
+      - **void WarningNoEnemiesToFight()** -
+      - **void WarningItemNotInInventory()** -
+      - **void WarningFullInventory()** -
+      - **void WarningNeedName()** -
+      - **void WarningWrongCommand()** -
+      - **void WarningNoItemToPickUp()** -
+      - **void WarningWrongItem()** -
+      - **void ByeBye()** -
+      - **void GameOver()** -
+      - **void GameWin()** -
 
 ### Controller - Descrição
 
