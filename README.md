@@ -2,27 +2,31 @@
 
 ## Autoria
 
-Trabalho realizado por:
+A work by:
 
 - Afonso Cunha - a22302960
-  - Responsável por:
+    - Responsible for:
+
 
 - Júlia Costa - a22304403
-  - Responsável por:
+    - Responsible for:
+  
   
 - Mariana Martins - a22302203
-  - Responsável por:
+    - Responsible for:
 
 
 [URL para o repositório Git](https://github.com/Juhhxx/YetAnotherDungeonCrawler_LP1)
 
 ## Arquitetura da solução
 
-De acordo com o que é pedido no enunciado deste projeto, a arqitetura deste mesmo seguiu os princípios por detrás do padrão de design de software MVC, estando então subdividida conceptual e logicamente em 3 partes: Model, View e Controller.
+According to the briefing on this project, the arquitecture of this same work follows the principles behind the **MVC** software design pattern. As such, it is divided, conceptually and logically in 3 elements: **"Model"**, **"View"** and **"Controller"**.
 
-Neste modelo de design, cada uma destas 3 partes é responsável por um tipo de funcionalidade específica,comunicando umas com as outras de rígida forma e nunca se responsabilizando por algo que caia fora dentro dos seus limites conceptuais.
+In this software design pattern, each of these 3 elements is responsible for a type of specific function, "spitting out" the result of their very limited actions and never taking up on something that isn't of its responsablity. The functional limits of each element in this model are very strict.
 
-Com isto, Model é responsável pela lógica, manipulando dados de forma a efetivamente 
+Everything included in the "Model" element is exclusively related to the fundamental logic behind the gameplay, actions and execution.
+Everything under the "View" element is responsible for UI, printing information to the player and input requests.
+Finally, the "Controller" element is responsible for making the connection between the two previously explained elements. It controls the game itself by calling what is needing and "communicating" between the logic and UI elements.
 
 ### Model - Descrição
 
@@ -142,16 +146,16 @@ Com isto, Model é responsável pela lógica, manipulando dados de forma a efeti
 ### Controller - Descrição
 
 1. **Class Controller**
-    - Descriptiiooooooon
-  
-      - **public void Start()** -
-      - **public void StartGameLoop()** -
-      - **public void HandleRoomAction()** -
-      - **public void HandleItemAction( bool isPotion, Func<Item, bool> playerAction)** -
-      - **public void HandleEnemyAction()** -
-      - **public bool HandleHealAction()** -
-      - **public bool TakeItem(Item item)** -
-      - **public void StartCombat(Enemy enemy)** -
+    - Descriptiioooooo
+
+        - **public void Start()** -
+        - **public void StartGameLoop()** -
+        - **public void HandleRoomAction()** -
+        - **public void HandleItemAction( bool isPotion, Func<Item, bool> playerAction)** -
+        - **public void HandleEnemyAction()** -
+        - **public bool HandleHealAction()** -
+        - **public bool TakeItem(Item item)** -
+        - **public void StartCombat(Enemy enemy)** -
 
 ### Gráfico UML
 
