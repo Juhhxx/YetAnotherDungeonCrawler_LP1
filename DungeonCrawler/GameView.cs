@@ -87,6 +87,22 @@ Stay sharp and use thy items wisely to navigate this prison and maybe overcome i
             Console.WriteLine(room.Description);
         }
         /// <summary>
+        /// Prints out the description of a specific enemy
+        /// </summary>
+        /// <param name="enemy"></param>
+        public void EnemyDescription(Enemy enemy)
+        {
+            Console.WriteLine(enemy.Description);
+        }
+        /// <summary>
+        /// Prints out the description of a specific item
+        /// </summary>
+        /// <param name="enemy"></param>
+        public void ItemDescription(Item item)
+        {
+            Console.WriteLine(item.Description);
+        }
+        /// <summary>
         /// This method is aiming to be a general non-specific input request
         /// </summary>
         /// <returns>String with player's input</returns>
