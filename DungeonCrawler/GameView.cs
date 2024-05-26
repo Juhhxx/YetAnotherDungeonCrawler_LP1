@@ -144,10 +144,19 @@ Stay sharp and use thy items wisely to navigate this prison and maybe overcome i
         {
             Console.WriteLine("Thy can not pass through there");
         }
+        /// <summary>
+        /// /Print to communicate that the player has healed themselves for a certain value
+        /// </summary>
+        /// <param name="potion"></param>
         public void HealResult(Item potion)
         {
             Console.WriteLine($"You heal for {potion.BuffValue}");
         }
+        /// <summary>
+        /// Prints out a little menu to show the Playerps HP, Attack Power, Defense as well as
+        /// the buffs (in dark green) applied to their base stats (in dark blue)
+        /// </summary>
+        /// <param name="character"></param>
         public void PlayerStatus(Player character)
         {     
             Console.WriteLine(@$"
@@ -173,7 +182,11 @@ Stay sharp and use thy items wisely to navigate this prison and maybe overcome i
             Console.WriteLine(@$"
 |-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-|");
         }
-        public void PickupItem(Item item)
+        /// <summary>
+        /// Print to communicate that te player picked up an item
+        /// </summary>
+        /// <param name="item"></param>
+        public void PickUpItem(Item item)
         {
             Console.WriteLine($"You added {item.Name} to your inventory.");
         }
