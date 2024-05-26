@@ -68,6 +68,11 @@ Começando pelo Main() dá-se uma instanciação de um objeto GameManager, chama
     -This class does not contain anything besides the constructor for an Item object and some properties corresponding to the  traits an item can have (**Name**, **Type** and **Buff Value**);
 
 7. **Class Room**
+   - Class that contains room traits, and controlling them through some methods.
+
+        - **public void AddRoom(string direction, Room room)** - Method that adds a room to a dictionary containing the different accessible rooms according to direction, relative to the room the player is in;
+        - **public void RemoveItem()** - Method that sets the room's item property to null, signifying there is no items in the room after this call;
+        - **public void KillEnemy()** - Method that sets the room's enemy to null, signifying there is no enemies in the room after this call;
 
 ### View - Descrição
 
