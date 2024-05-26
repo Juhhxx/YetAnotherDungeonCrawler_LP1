@@ -37,8 +37,14 @@ namespace DungeonCrawler
         private bool instanceReady = false;
 
         string pathFolder = Path.Combine("DungeonCrawler","GameFiles");
-        
-        public void InitializeEnemies()
+
+        public void InitializeGame()
+        {
+            InitializeEnemies();
+            InitializeItems();
+            InitializeRooms();
+        }
+        private void InitializeEnemies()
         {
             string pathFile = Path.Combine(pathFolder,"Enemies.txt");
             using StreamReader sr = new StreamReader(pathFile);
@@ -82,7 +88,7 @@ namespace DungeonCrawler
                 Console.WriteLine($"{kvp.Key} : {kvp.Value.HP}, {kvp.Value.AttackPower}, {kvp.Value.Defense}");
             } 
         }
-        public void InitializeItems()
+        private void InitializeItems()
         {
             string pathFile = Path.Combine(pathFolder,"Items.txt");
             using StreamReader sr = new StreamReader(pathFile);
@@ -123,7 +129,7 @@ namespace DungeonCrawler
                 Console.WriteLine($"{kvp.Key} : {kvp.Value.Type.ToString()}, {kvp.Value.BuffValue}");
             } 
         }
-        public void InitializeRooms()
+        private void InitializeRooms()
         {
             string pathFile = Path.Combine(pathFolder,"Rooms.txt");
             using StreamReader sr = new StreamReader(pathFile);
