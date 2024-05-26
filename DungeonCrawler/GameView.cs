@@ -227,6 +227,9 @@ Stay sharp and use thy items wisely to navigate this prison and maybe overcome i
         {
             Console.WriteLine("Something is amiss with that command spell...");
         }
+        /// <summary>
+        /// Print out a warning about not existing any items to pickup
+        /// </summary>
         public void WarningNoItemToPickUp()
         {
             Console.WriteLine("There is naught to pick up...");
