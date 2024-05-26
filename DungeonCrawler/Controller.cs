@@ -139,7 +139,7 @@ namespace DungeonCrawler
                 }
             }
         }
-        public void HandleItemAction( bool isPotion, Action<Item> playerAction)
+        public void HandleItemAction( bool isPotion, Func<Item, bool> playerAction)
         {
             if ( !player.CheckForItem() )
             {
@@ -154,8 +154,15 @@ namespace DungeonCrawler
 
                 if ( newItem != null && TakeItem(newItem) )
                 {
-                    playerAction(newItem);
-                    view.PickupItem(newItem);
+                    if ( playerAction(newItem) )
+                    {
+                        view.PickupItem(newItem);
+                    }
+                    else
+                    {
+                        // print warning - inventory full
+                    }
+                    
                 }
                 else
                 {
