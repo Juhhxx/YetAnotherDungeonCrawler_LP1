@@ -5,16 +5,19 @@
 # Defense:[Enemy Defense]
 
 Name:Afonso Cunha
+Description:It's Afonso Cunha
 HP:50
 AttackPower:5
 Defense:0
 
 Name:Fire Dragon
+Description:A giant beast
 HP:100
 AttackPower:50
 Defense:10
 
 Name:Diogo
+Description:God himself
 HP:9999
 AttackPower:50
 Defense:0
