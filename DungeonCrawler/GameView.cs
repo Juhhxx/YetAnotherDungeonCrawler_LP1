@@ -235,11 +235,11 @@ Stay sharp and use thy items wisely to navigate this prison and maybe overcome i
             Console.WriteLine("There is naught to pick up...");
         }
         /// <summary>
-        /// Print out a warning about when an item is nor a shield or sword
+        /// Print out a warning about when an item wrong/not used for a certain purpose
         /// </summary>
-        public void WarningNotShieldOrSword()
+        public void WarningWrongItem()
         {
-            Console.WriteLine("That is not a piece of equipment.");
+            Console.WriteLine("That is not a piece of equipment for this occasion...");
         }
         /// <summary>
         /// Print out a goodbye message for the player when he quits the game
