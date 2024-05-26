@@ -144,6 +144,10 @@ Stay sharp and use thy items wisely to navigate this prison and maybe overcome i
         {
             Console.WriteLine("Thy can not pass through there");
         }
+        /// <summary>
+        /// /Print to communicate that the player has healed themselves for a certain value
+        /// </summary>
+        /// <param name="potion"></param>
         public void HealResult(Item potion)
         {
             Console.WriteLine($"You heal for {potion.BuffValue}");
