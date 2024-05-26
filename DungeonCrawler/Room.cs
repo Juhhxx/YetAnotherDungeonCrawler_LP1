@@ -17,6 +17,7 @@ namespace DungeonCrawler
         public Enemy REnemy { get; private set; }
         public Item RItem { get; private set; }
         public string Description { get; }
+        public bool IsFinal { get; }
 
         public Room(string description, Enemy enemy, Item item)
         {

@@ -52,27 +52,32 @@ namespace DungeonCrawler
             }
             InRoom.RemoveItem();
         }
-        public Item ConfirmItem(string name, bool isPotion)
+        public Item ConfirmItem(bool isPotion)
         {
             Item item = null;
 
-            if ( name == InRoom.RItem.Name )
+            if ( isPotion && InRoom.RItem.Type == BuffType.HP)
             {
-                if ( isPotion && InRoom.RItem.Type == BuffType.HP)
-                {
-                    item = InRoom.RItem;
-                }
-                else if ( !isPotion && !(InRoom.RItem.Type == BuffType.HP))
-                {
-                    item = InRoom.RItem;
-                }
+                item = InRoom.RItem;
+            }
+            else if ( !isPotion && !(InRoom.RItem.Type == BuffType.HP))
+            {
+                item = InRoom.RItem;
             }
 
             return item;
         }
+        public Enemy ConfirmEnemy()
+        {
+            return InRoom.REnemy;
+        }
         public bool CheckForItem()
         {
             return InRoom.RItem != null;
+        }
+        public bool CheckForEnemy()
+        {
+            return InRoom.REnemy != null;
         }
         public Item SearchInInventory(string name)
         {
@@ -88,6 +93,10 @@ namespace DungeonCrawler
             }
 
             return item;
+        }
+        public bool FoundFinalRoom()
+        {
+            return InRoom.IsFinal;
         }
     }
 }
