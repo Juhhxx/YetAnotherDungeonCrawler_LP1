@@ -183,6 +183,18 @@ Stay sharp and use thy items wisely to navigate this prison and maybe overcome i
 |-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-|");
         }
         /// <summary>
+        /// Print out the request for confirmation on if the player wants to pick up a certain item
+        /// </summary>
+        /// <param name="item"></param>
+        /// <returns>String with the player's answer</returns>
+        public string AskPickUpItem(Item item)
+        {
+            Console.WriteLine($"Is it thy wish to pick {item.Name} up?");
+            Console.Write(">");
+            string s = Console.ReadLine();
+            return s;
+        }
+        /// <summary>
         /// Print to communicate that the player picked up an item
         /// </summary>
         /// <param name="item"></param>
