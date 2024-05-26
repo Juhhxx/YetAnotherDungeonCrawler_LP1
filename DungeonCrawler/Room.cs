@@ -25,7 +25,7 @@ namespace DungeonCrawler
         // Initialize room description.
         public string Description { get; }
         // Initialize if room is final.
-        public bool IsFinal { get; }
+        public bool IsFinal { get; private set; }
 
         /// <summary>
         /// Room class constructor.
@@ -64,6 +64,13 @@ namespace DungeonCrawler
         public void KillEnemy()
         {
             REnemy = null;
+        }
+        /// <summary>
+        /// Set room instance as the final room.
+        /// </summary>
+        public void SetAsFinalRoom()
+        {
+            IsFinal = true;
         }
     }
 }
