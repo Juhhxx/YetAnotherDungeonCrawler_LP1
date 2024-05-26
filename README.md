@@ -54,9 +54,18 @@ Começando pelo Main() dá-se uma instanciação de um objeto GameManager, chama
         - **public Item SearchInInventory(string name)** - Method that looks through the Inventory for the first item with a given name. Returns the item if it is not null (if it is in the inventory), and return null if there is no item;
         - **public bool FoundFinalRoom()** - Method that checks if the Player has found a final room, returning **IsFinal()** using the current room as its parameter;
 5. **Class GameInitializer**
-6. **Class GameView**
-7. **Class Item**
-8. **Class Room**
+    - This class is responsible for initializing the objects necessary to the game, as well as having some methods to verify some values related and necessary to such initializations.
+
+        - **public void InitializeGame()** - Call all of the initializer methods to start the game;
+        - **private void InitializeEnemies()** - Initialize all Enemy instances given in the Enemies.txt file;
+        - **private void InitializeItems()** - Initialize all Item instances given in the Items.txt file;
+        - **private void InitializeRooms()** - Initialize all the Room instances give in the Rooms.txt file;
+        - **private string NullOrValue(string param,string variable)** - Find if a specified variable should be null or have a value. If param is "-" the variable is null, if else the variable is equals to param. Returns the value to be set;
+        - **private Enemy NullOrValue(string param,Enemy variable)** - Find if a specified variable should be null or have a value. If param is "-" the variable is null, if else the variable is equals to param. Returns the value to be set;
+        - **private Item NullOrValue(string param,Item variable)** - Find if a specified variable should be null or have a value. If param is "-" the variable is null, if else the variable is equals to param. Returns the value to be set;
+        - **private void SetUpRoomDirections()** - Set up the Rooms instances directions;
+6. **Class Item**
+7. **Class Room**
 
 ### View - Descrição
 
