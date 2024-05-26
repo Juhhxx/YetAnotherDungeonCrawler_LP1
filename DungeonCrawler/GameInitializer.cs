@@ -13,30 +13,35 @@ namespace DungeonCrawler
         Dictionary<string,Room> roomDict = new Dictionary<string, Room>();
 
         string s;
+        // Enemy variables
+        private string eName;
+        private int eHP;
+        private int eAtck;
+        private int eDef;
+        // Item variables
+        private string iName;
+        private BuffType iType;
+        private int iValue;
+        // Room variables
+        private string rName;
+        private string rDesc;
+        private Enemy rEnemy;
+        private Item rItem;
+        private List<string[]> roomDirectionsList = new List<string[]>();
+        private string[] roomDirections;
+        private string rNorth;
+        private string rSouth;
+        private string rEast;
+        private string rWest;
+        
+        private bool instanceReady = false;
 
-        string eName;
-        int eHP;
-        int eAtck;
-        int eDef;
-
-        string iName;
-        BuffType iType;
-        int iValue;
-
-        string rName;
-        string rDesc;
-        Enemy rEnemy;
-        Item rItem;
-        string rNorth;
-        string rSouth;
-        string rEast;
-        string rWest;
-
-        bool instanceReady = false;
+        string pathFolder = Path.Combine("DungeonCrawler","GameFiles");
         
         public void InitializeEnemies()
         {
-            using StreamReader sr = new StreamReader("Enemies.txt");
+            string pathFile = Path.Combine(pathFolder,"Enemies.txt");
+            using StreamReader sr = new StreamReader(pathFile);
 
             while ((s = sr.ReadLine()) != "END")
             {
@@ -79,7 +84,8 @@ namespace DungeonCrawler
         }
         public void InitializeItems()
         {
-            using StreamReader sr = new StreamReader("Items.txt");
+            string pathFile = Path.Combine(pathFolder,"Items.txt");
+            using StreamReader sr = new StreamReader(pathFile);
 
             while ((s = sr.ReadLine()) != "END")
             {
@@ -119,7 +125,8 @@ namespace DungeonCrawler
         }
         public void InitializeRooms()
         {
-            using StreamReader sr = new StreamReader("Rooms.txt");
+            string pathFile = Path.Combine(pathFolder,"Rooms.txt");
+            using StreamReader sr = new StreamReader(pathFile);
 
             while ((s = sr.ReadLine()) != "END")
             {
@@ -138,44 +145,91 @@ namespace DungeonCrawler
                             case "Description":
                                 rDesc = parameters[1];
                                 break;
-                            // case "North":
-                            //     if (parameters[1] != "!")
-                            //         rNorth = parameters[1];
-                            //     break;
-                            // case "South":
-                            //     if (parameters[1] != "!")
-                            //         rSouth = parameters[1];
-                            //     break;
-                            // case "East":
-                            //     if (parameters[1] != "!")
-                            //         rEast = parameters[1];
-                            //     break;
-                            // case "West":
-                            //     if (parameters[1] != "!")
-                            //         rWest = parameters[1];
-                            //     break;
+                            case "North":
+                                rNorth = NullOrValue(parameters[1],rNorth);
+                                break;
+                            case "South":
+                                rSouth = NullOrValue(parameters[1],rSouth);
+                                break;
+                            case "East":
+                                rEast = NullOrValue(parameters[1],rEast);
+                                break;
+                            case "West":
+                                rWest = NullOrValue(parameters[1],rWest);
+                                break;
                             case "Enemy":
-                                if (parameters[1] != "-")
-                                    rEnemy = enemyDict[parameters[1]];
+                                rEnemy = NullOrValue(parameters[1],rEnemy);
                                 break;
                             case "Item":
-                                if (parameters[1] != "-")
-                                    rItem = itemDict[parameters[1]];
+                                rItem = NullOrValue(parameters[1],rItem);
                                 instanceReady = true;
                                 break;
                         }
                         if (instanceReady)
                         {
                             Console.WriteLine("Room created");
-                            roomDict.Add(rName,new Room(rDesc,rEnemy,rItem));
+
+                            roomDirections = new string[4] { rNorth, rSouth, rEast, rWest };
+                            
+                            roomDirectionsList.Add(roomDirections);
+                            roomDict.Add(rName,new Room(rName,rDesc,rEnemy,rItem));
                             instanceReady = false;
                         }
                     }
                 }
             }
+            SetUpRoomDirections();
             foreach (KeyValuePair<string,Room> kvp in roomDict)
             {
-                Console.WriteLine($"{kvp.Key}\n{kvp.Value.Description}\nEnemy: {kvp.Value.REnemy.Name}  {kvp.Value.REnemy.HP} {kvp.Value.REnemy.AttackPower}\nItem: {kvp.Value.RItem.Name} {kvp.Value.RItem.Type.ToString()} {kvp.Value.RItem.BuffValue}");
+                // Console.WriteLine($"{kvp.Key}\n{kvp.Value.Description}\n{kvp.Value.accessRooms["north"].Name}\n{kvp.Value.accessRooms["south"].Name}\n{kvp.Value.accessRooms["east"].Name}\n{kvp.Value.accessRooms["west"].Name}\nEnemy: {kvp.Value.REnemy.Name}  {kvp.Value.REnemy.HP} {kvp.Value.REnemy.AttackPower}\nItem: {kvp.Value.RItem.Name} {kvp.Value.RItem.Type.ToString()} {kvp.Value.RItem.BuffValue}");
+                Console.WriteLine($"{kvp.Key}\nNorth:{kvp.Value.accessRooms["north"]}\nSouth:{kvp.Value.accessRooms["south"]}\nEast:{kvp.Value.accessRooms["east"]}\nWest:{kvp.Value.accessRooms["west"]}");
+            } 
+        }
+        private string NullOrValue(string param,string variable)
+        {
+            if (param != "-")
+                variable = param;
+            else
+                variable = null;
+
+            return variable;
+        }
+        private Enemy NullOrValue(string param,Enemy variable)
+        {
+            if (param != "-")
+                variable = enemyDict[param];
+            else
+                variable = null;
+                
+            return variable;
+        }
+        private Item NullOrValue(string param,Item variable)
+        {
+            if (param != "-")
+                variable = itemDict[param];
+            else
+                variable = null;
+                
+            return variable;
+        }
+        private void SetUpRoomDirections()
+        {
+            int idx = 0;
+
+            foreach (KeyValuePair<string,Room> kvp in roomDict)
+            {
+                string[] roomDir = roomDirectionsList[idx];
+
+                if (roomDir[0] != null)
+                    kvp.Value.AddRoom("north",roomDict[roomDir[0]]);
+                if (roomDir[1] != null)
+                    kvp.Value.AddRoom("south",roomDict[roomDir[1]]);
+                if (roomDir[2] != null)
+                    kvp.Value.AddRoom("east",roomDict[roomDir[2]]);
+                if (roomDir[3] != null)
+                    kvp.Value.AddRoom("west",roomDict[roomDir[3]]);
+
+                idx++;
             } 
         }
     }
