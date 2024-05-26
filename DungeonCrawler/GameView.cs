@@ -213,6 +213,9 @@ Stay sharp and use thy items wisely to navigate this prison and maybe overcome i
         {
             Console.WriteLine("What thou seekest is not in thy possession.");
         }
+        /// <summary>
+        /// print out a Warning that a Name is required and that progress is not possible without it
+        /// </summary>
         public void WarningNeedName()
         {
             Console.WriteLine("Each adventurer hath a name, thou shouldst be no exception.\nName, please?");
