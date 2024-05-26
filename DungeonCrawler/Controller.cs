@@ -250,26 +250,18 @@ namespace DungeonCrawler
             // print - ask which item they want to use
             string input = view.ItemToUse().Trim().ToLower();
 
-            try
-            {
-                Item newItem = player.SearchInInventory(input);
+            Item newItem = player.SearchInInventory(input);
 
-                if ( newItem != null )
-                {
-                    player.Heal(newItem);
-                    view.HealResult(newItem);
-                    result = true;
-                }
-                else
-                {
-                    // print warning - item is not in inventory
-                    view.WarningItemNotInInventory();
-                }
-            }
-            catch (Exception e)
+            if ( newItem != null )
             {
-                //  print warning - need to insert a name
-                view.WarningNeedName();
+                player.Heal(newItem);
+                view.HealResult(newItem);
+                result = true;
+            }
+            else
+            {
+                // print warning - item is not in inventory
+                view.WarningItemNotInInventory();
             }
 
             return result;

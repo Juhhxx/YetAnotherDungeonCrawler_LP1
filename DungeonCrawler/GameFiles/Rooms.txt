@@ -12,18 +12,18 @@
 # The first room block will be the room where the player spawns, 
 # and the last room block will be the final room
 
-Name:InitialRoom
+NameInitial Room
 Description:The grand entrance hall of the dungeon, dimly lit by flickering torches.
 North:-
 South:Hallway
 East:-
 West:-
 Enemy:Giant Rat
-Item:Flaming sword
+Item:Flaming Sword
 
 Name:Hallway
 Description:A long, narrow hallway lined with dusty portraits of long-forgotten ancestors.
-North:InitialRoom
+NorthInitial Room
 South:-
 East:Library
 West:-
@@ -70,7 +70,7 @@ Name:Workshop
 Description:A dusty workshop with various tools and unfinished projects scattered about.
 North:Armory
 South:Gallery
-East:FinalRoom
+East:Final Room
 West:-
 Enemy:Gremlin
 Item:Rejuvenation Potion
@@ -84,7 +84,7 @@ West:Storage Room
 Enemy:Dragon
 Item:Ancient Tome of Good Health
 
-Name:FinalRoom
+Name:Final Room
 Description:A gallery with paintings of epic battles. A light beams at the end of this grand corridor.
 North:-
 South:-
