@@ -13,11 +13,14 @@ namespace DungeonCrawler
         public Room InRoom{ get; private set; }
         public int BaseAttack{ get; private set;}
         public int BaseDefense{ get; private set;}
-        public Player(string name, int hp, int atk, int def, Room room) : base(name,hp,atk,def)
+        public Player(string name, int hp, int atk, int def) : base(name,hp,atk,def)
         {
             BaseAttack = AttackPower;
             BaseDefense = Defense;
-            InRoom = room;
+        }
+        public void SetInitialRoom(Room initialRoom)
+        {
+            InRoom = initialRoom;
         }
         public bool Move(string direction)
         {
