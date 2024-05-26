@@ -5,17 +5,17 @@
 # BuffValue:[Value of the buff]
 
 Name:António's 
-Description:A weird green potion
+Description:A weird green potion is found on the floor
 BuffType:HP
 BuffValue:50
 
 Name:Legendary Sword
-Description:It shines brighter than anything
+Description:A shining sword stands on the floor of the room
 BuffType:AttackPower
 BuffValue:100
 
 Name:Pau do Ivan
-Description:Uhhh idk
+Description:Uhhh idk there some weird shit on the floor
 BuffType:AttackPower
 BuffValue:-1
 
