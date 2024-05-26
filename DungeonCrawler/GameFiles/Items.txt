@@ -1,17 +1,21 @@
 # To create a new item write a new block following the bellow logic
 # Name:[Item Name]
+# Description:[Item Description]
 # BuffType:[Which Player Status will be affected (HP,AttackPower,Defense)]
 # BuffValue:[Value of the buff]
 
-Name:António's Potion
+Name:António's 
+Description:A weird green potion
 BuffType:HP
 BuffValue:50
 
 Name:Legendary Sword
+Description:It shines brighter than anything
 BuffType:AttackPower
 BuffValue:100
 
 Name:Pau do Ivan
+Description:Uhhh idk
 BuffType:AttackPower
 BuffValue:-1
 
