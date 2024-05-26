@@ -6,7 +6,10 @@ A work by:
 
 - Afonso Cunha - a22302960
     - Responsible for:
-
+        - Code in IView interface;
+        - Code in GameView class;
+        - Documentation in GameView class;
+        - Report
 
 - Júlia Costa - a22304403
     - Responsible for:
@@ -14,13 +17,13 @@ A work by:
   
 - Mariana Martins - a22302203
     - Responsible for:
-      - Code in Controller class
-      - Code in Player class
-      - Code in Character class
-      - Code in Enemy class
-      - BuffType Enum
-      - Code in Room class
-      - Documentation in Item class
+        - Code in Controller class
+        - Code in Player class
+        - Code in Character class
+        - Code in Enemy class
+        - BuffType Enum
+        - Code in Room class
+        - Documentation in Item class
 
 
 [Git repository URL](https://github.com/Juhhxx/YetAnotherDungeonCrawler_LP1)
