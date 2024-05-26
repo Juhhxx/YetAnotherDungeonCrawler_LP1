@@ -9,33 +9,87 @@
 # Item:[Item in the Room]
 #
 # All fields except Name and Description can be set to null by using a "-"
-# The room block named *Initial Room* will be the room where the player spawns, 
-# and the room block named *Final Room* will be the final room
+# The first room block will be the room where the player spawns, 
+# and the last room block will be the final room
 
-Name:Initial Room
-Description:You see a menacing figure in the middle of the Room1
+Name:InitialRoom
+Description:The grand entrance hall of the dungeon, dimly lit by flickering torches.
 North:-
-South:-
-East:Room2
-West:Final Room
-Enemy:Diogo
-Item:Legendary Sword
+South:Hallway
+East:-
+West:-
+Enemy:Giant Rat
+Item:Flaming sword
 
-Name:Room2
-Description:There is nothing here except a weird object on the floor
+Name:Hallway
+Description:A long, narrow hallway lined with dusty portraits of long-forgotten ancestors.
+North:InitialRoom
+South:-
+East:Library
+West:-
+Enemy:Skeleton
+Item:-
+
+Name:Library
+Description:A vast library filled with towering bookshelves. A magical aura fills the air.
+North:Study
+South:Storage Room
+East:-
+West:Hallway
+Enemy:-
+Item:Tome of Vitality
+
+Name:Study
+Description:A cozy study with a crackling fireplace. Scrolls and books are scattered everywhere.
+North:-
+South:Library
+East:Armory
+West:-
+Enemy:-
+Item:Life Force Elixir
+
+Name:Storage Room
+Description:A dark, cluttered room with crates and barrels. It smells musty.
+North:Library
+South:-
+East:Armory
+West:-
+Enemy:Goblin
+Item:Rusty Sword
+
+Name:Armory
+Description:A room filled with weapons and armor. Some pieces are shining, others are rusted.
+North:-
+South:Workshop
+East:-
+West:Study
+Enemy:-
+Item:Dragon Scale Shield
+
+Name:Workshop
+Description:A dusty workshop with various tools and unfinished projects scattered about.
+North:Armory
+South:Gallery
+East:FinalRoom
+West:-
+Enemy:Gremlin
+Item:Rejuvenation Potion
+
+Name:Gallery
+Description:A small room filled with glittering treasures and jewels. A treasure chest sits in the center.
+North:Workshop
+South:-
+East:-
+West:Storage Room
+Enemy:Dragon
+Item:Ancient Tome of Good Health
+
+Name:FinalRoom
+Description:A gallery with paintings of epic battles. A light beams at the end of this grand corridor.
 North:-
 South:-
 East:-
-West:Room1
-Enemy:-
-Item:Pau do Ivan
-
-Name:Final Room
-Description:The smell of love fills the air as much as the smell of roten flesh... Whatever depraved fantasies were here explored, they better mimic these corpses and better stay dead
-North:-
-South:-
-East:Initial Room
-West:-
+West:Workshop
 Enemy:-
 Item:-
 
