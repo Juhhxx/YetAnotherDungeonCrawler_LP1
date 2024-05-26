@@ -14,6 +14,13 @@ A work by:
   
 - Mariana Martins - a22302203
     - Responsible for:
+      - Code in Controller class
+      - Code in Player class
+      - Code in Character class
+      - Code in Enemy class
+      - BuffType Enum
+      - Code in Room class
+      - Documentation in Item class
 
 
 [Git repository URL](https://github.com/Juhhxx/YetAnotherDungeonCrawler_LP1)
