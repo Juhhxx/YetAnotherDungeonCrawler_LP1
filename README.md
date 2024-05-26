@@ -43,7 +43,7 @@ Finally, the "Controller" element is responsible for making the connection betwe
         - **Information on if there is an enemy present in the room, specifying its name in such occasion**
         - **Information on if there is an item present in the room, specifying its name in such occasion**
   
-### Model - Description
+### "Model" Element - Description
 
 1. **Enum BuffTypes**
     - Enum containing the 3 different types of stat buffs that can exist: HP, Attack and Defense buffs.
@@ -91,7 +91,7 @@ Finally, the "Controller" element is responsible for making the connection betwe
         - **public void RemoveItem()** - Method that sets the room's item property to null, signifying there is no items in the room after this call;
         - **public void KillEnemy()** - Method that sets the room's enemy to null, signifying there is no enemies in the room after this call;
 
-### View - Description
+### "View" Element - Description
 
 1. **Interface IView**
     - Contains all the methods that are to be implemented by the GameView class (that in this project assumes the full responsibility of the View module of an MVC pattern)
@@ -157,7 +157,7 @@ Finally, the "Controller" element is responsible for making the connection betwe
         - **void GameOver()** - Print out a message in a game over situation;
         - **void GameWin()** - Print out a message for the occasion where the player finds the exit and wins the game;
 
-### Controller - Description
+### "Controller" Element- Description
 
 1. **Class Controller**
     - The controller class is responsible for the loop of the game, for the logic behind every game/player interaction and to use the view and model together to make the interfaces of the game work.
@@ -168,8 +168,8 @@ Finally, the "Controller" element is responsible for making the connection betwe
         - **public void HandleItemAction( bool isPotion, Func<Item, bool> playerAction)** - HandleItemAction is a method capable of adding items to the Player's inventory or equipping them. First, it checks if there even is an item in the room, giving a warning to the player if not. Else, it will confirm that the item is either pick up-able or equip-able and then it will give the item's information to the Player and ask them if they want to take it. If the player takes it, and the Inventory is not full, it will tell the player the item was kept;
         - **public void HandleEnemyAction()** - HandleItemAction checks if there is an enemy in the room, and if so it will confirm the enemy and start a battle between it and the player. If there are no enemies in the room a warning will appear;
         - **public bool HandleHealAction()** - HandleHealAction will first ask the player which item they want to use, and if the input corresponds to an item in the Inventory, it will heal the Player and show the action's result, else it will warn the Player that no such item is in their inventory;
-        - **public bool TakeItem(Item item)** -
-        - **public void StartCombat(Enemy enemy)** -
+        - **public bool TakeItem(Item item)** - TakeItem method receives an item and asks the player if they want to take it or leave it. If the command is wrong, it will give a warning to the player and loop back to the menu. Returns true if the Player wants to take it, and false if they don't;
+        - **public void StartCombat(Enemy enemy)** - This method initiates a combat between the player and an enemy. It handles the player's actions (attack, heal, view status, or quit) and the enemy's counter-attacks in a loop until either the enemy is defeated or the player dies;
         - **public void CheckForDescriptions(Room room)** - This method describes a given room and the current room's Enemy and Item only if they exit;
 
 ### UML Diagram
