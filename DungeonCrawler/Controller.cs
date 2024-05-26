@@ -167,7 +167,7 @@ namespace DungeonCrawler
                 }
                 else
                 {
-                    // print warning - item is not shield or sword
+                    // print warning - item is the wrong type
                     view.WarningNotShieldOrSword();
                 }
             }
