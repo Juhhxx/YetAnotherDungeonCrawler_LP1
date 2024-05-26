@@ -12,7 +12,7 @@
 # The first room block will be the room where the player spawns, 
 # and the last room block will be the final room
 
-NameInitial Room
+Name:Initial Room
 Description:The grand entrance hall of the dungeon, dimly lit by flickering torches.
 North:-
 South:Hallway
