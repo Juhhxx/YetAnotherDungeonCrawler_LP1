@@ -25,7 +25,7 @@ namespace DungeonCrawler
             string input;
 
             // print main menu
-            
+
             while (true)
             {
                 if (end) break;
@@ -120,6 +120,11 @@ namespace DungeonCrawler
                     {
                         view.CanMove();
                         view.RoomDescription(player.InRoom);
+                        if (player.FoundFinalRoom())
+                        {
+                            view.GameWin();
+                            end = true;
+                        }
                     } 
                     else view.CantMove();
                     break;
