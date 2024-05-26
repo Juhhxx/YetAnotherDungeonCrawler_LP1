@@ -94,7 +94,7 @@ namespace DungeonCrawler
         /// and then removes the item from the Player's current room.
         /// </summary>
         /// <param name="newItem">The weapon or shield for the player to use.</param>
-        public void Equip(Item newItem)
+        public bool Equip(Item newItem)
         {
             if (newItem.Type == BuffType.AttackPower)
             {
@@ -107,6 +107,8 @@ namespace DungeonCrawler
                 Shield = newItem;
             }
             InRoom.RemoveItem();
+            
+            return true;
         }
         /// <summary>
         /// Method to confirm if the item in the Player's current room is or not a potion.
