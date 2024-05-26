@@ -4,9 +4,17 @@ using System.Linq;
 using System.Threading.Tasks;
 
 namespace DungeonCrawler
+    /// <summary>
+    /// Class that houses all the 'View' part of the MVC model, be it for menus, other UI or simple prints
+    /// </summary>
 {
     public class GameView : IView
     {
+        /// <summary>
+        /// Method to make it easier to print colored text
+        /// </summary>
+        /// <param name="str"></param>
+        /// <param name="color"></param>
         public void ColoredText(string str, ConsoleColor color) 
         {
             //Change console foreground color
@@ -16,6 +24,10 @@ namespace DungeonCrawler
             //Reset console color
             Console.ResetColor();
         }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
         public string StartMenu()
         {
             Console.WriteLine("|-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-|");
@@ -26,7 +38,6 @@ namespace DungeonCrawler
             Console.WriteLine("What hath brought thee here then?\n");
 
             Console.WriteLine("New Game");
-            Console.WriteLine("Continue");
             Console.WriteLine("Quit");
 
             Console.Write(">");
@@ -68,6 +79,7 @@ Stay sharp and use thy items wisely to navigate this prison and maybe overcome i
         }
         public string AwaitDecision()
         {
+            Console.WriteLine("What will you do, adventurer?");
             Console.Write(">");
             string s = Console.ReadLine();
             return s;
@@ -75,6 +87,7 @@ Stay sharp and use thy items wisely to navigate this prison and maybe overcome i
         public string AwaitBattleInput()
         {
             Console.WriteLine("The battlefield is ready for your decision. Quick!");
+            Console.WriteLine("1 - Attack    2 - Heal");
             Console.Write(">");
             string s = Console.ReadLine();
             return s;
@@ -87,7 +100,7 @@ Stay sharp and use thy items wisely to navigate this prison and maybe overcome i
             return s;
         }
 
-        public void AttackResult(Character characterActive, Character characterPassive )
+        public void AttackResult(Character characterActive, Character characterPassive, int hitPower)
         {
             Console.WriteLine($"{characterActive.Name} attacked {characterPassive} for {characterActive.Attack(characterPassive)} damage!");
         }
@@ -97,7 +110,7 @@ Stay sharp and use thy items wisely to navigate this prison and maybe overcome i
         }
         public void CantMove()
         {
-            Console.WriteLine("Not through there");
+            Console.WriteLine("Thy can not pass through there");
         }
         public void HealResult(Item potion)
         {
