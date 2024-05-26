@@ -11,7 +11,7 @@ namespace DungeonCrawler
         Dictionary<string,Enemy> enemyDict = new Dictionary<string, Enemy>();
         Dictionary<string,Item> itemDict = new Dictionary<string, Item>();
         Dictionary<string,Room> roomDict = new Dictionary<string, Room>();
-
+        // String used to analyze the files
         string s;
         // Enemy variables
         private string eName;
@@ -36,12 +36,18 @@ namespace DungeonCrawler
         // Bool value to know when an instance ir ready
         private bool instanceReady = false;
         // Initial path for GameFiles
-        string pathFolder = Path.Combine("DungeonCrawler","GameFiles");
+        private string pathFolder = Path.Combine("DungeonCrawler","GameFiles");
+        private Player player;
+        public GameInitializer(Player player)
+        {
+            this.player = player;
+        }
         public void InitializeGame()
         {
             InitializeEnemies();
             InitializeItems();
             InitializeRooms();
+            player.SetInitialRoom(roomDict["Room1"]);
         }
         private void InitializeEnemies()
         {
