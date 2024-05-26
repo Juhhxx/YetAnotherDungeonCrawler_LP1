@@ -206,6 +206,9 @@ Stay sharp and use thy items wisely to navigate this prison and maybe overcome i
         {
             Console.WriteLine($"{item.Name} - {item.Type} - {item.BuffValue}");
         }
+        /// <summary>
+        /// Print out a Warning that a certain item the player is looking for is not in their possession
+        /// </summary>
         public void WarningItemNotInInventory()
         {
             Console.WriteLine("What thou seekest is not in thy possession.");
