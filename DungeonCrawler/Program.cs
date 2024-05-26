@@ -6,8 +6,6 @@ namespace DungeonCrawler
     {
         static void Main(string[] args)
         {
-            GameInitializer init = new GameInitializer();
-            init.InitializeGame();
         }
     }
 }

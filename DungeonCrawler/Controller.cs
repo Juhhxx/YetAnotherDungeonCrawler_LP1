@@ -11,6 +11,7 @@ namespace DungeonCrawler
     {
         private IView view;
         private Player player;
+        private GameInitializer init;
         private bool end;
         private bool died;
 
@@ -18,6 +19,7 @@ namespace DungeonCrawler
         {
             this.view = view;
             this.player = player;
+            init = new GameInitializer(player);
             end = false;
         }
         public void Start()
@@ -36,14 +38,9 @@ namespace DungeonCrawler
                 {
                     case "new game":
                         view.ExplainNewGame();
+                        init.InitializeGame();
 
                         // start new game ?
-
-                        StartGameLoop();
-                        break;
-                    case "continue":
-
-                        // open save file ?
 
                         StartGameLoop();
                         break;
