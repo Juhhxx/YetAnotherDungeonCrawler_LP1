@@ -4,20 +4,40 @@
 # BuffType:[Which Player Status will be affected (HP,AttackPower,Defense)]
 # BuffValue:[Value of the buff]
 
-Name:António's 
-Description:A weird green potion is found on the floor
+Name:Flaming Sword
+Description:A sword engulfed in magical flames is the only light source.
+BuffType:AttackPower
+BuffValue:30
+
+Name:Tome of Vitality
+Description:A tome that grants vitality to the reader stands out in the shelves.
+BuffType:HP
+BuffValue:40
+
+Name:Life Force Elixir
+Description:An elixir that boosts the life force of the drinker sits on a desk.
+BuffType:HP
+BuffValue:60
+
+Name:Rusty Sword
+Description:An old and rusted sword lays in the middle of the room.
+BuffType:AttackPower
+BuffValue:10
+
+Name:Dragon Scale Shield
+Description:A shield made from dragon scales, incredibly durable, stands out among all the items.
+BuffType:Defense
+BuffValue:50
+
+Name:Rejuvenation Potion
+Description:A potion that rejuvenates and heals the drinker sits visible and abandoned.
 BuffType:HP
 BuffValue:50
 
-Name:Legendary Sword
-Description:A shining sword stands on the floor of the room
-BuffType:AttackPower
-BuffValue:100
-
-Name:Pau do Ivan
-Description:Uhhh idk there some weird shit on the floor
-BuffType:AttackPower
-BuffValue:-1
+Name:Ancient Tome of Good Health
+Description:A tome that bestows good health upon the reader lays at your feet.
+BuffType:HP
+BuffValue:50
 
 END
 

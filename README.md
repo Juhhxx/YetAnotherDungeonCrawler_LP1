@@ -16,19 +16,34 @@ A work by:
     - Responsible for:
 
 
-[URL para o repositório Git](https://github.com/Juhhxx/YetAnotherDungeonCrawler_LP1)
+[Git repository URL](https://github.com/Juhhxx/YetAnotherDungeonCrawler_LP1)
 
-## Arquitetura da solução
+## Solution architecture
 
-According to the briefing on this project, the arquitecture of this same work follows the principles behind the **MVC** software design pattern. As such, it is divided, conceptually and logically in 3 elements: **"Model"**, **"View"** and **"Controller"**.
+According to the briefing on this project, the architecture of this same work follows the principles behind the **MVC** software design pattern. As such, it is divided, conceptually and logically in 3 elements: **"Model"**, **"View"** and **"Controller"**. Adding to this, for the fixed map, Enemy and Item stats' "database" we opted for 3 .txt files that store everything needed to initialize each of these.
 
-In this software design pattern, each of these 3 elements is responsible for a type of specific function, "spitting out" the result of their very limited actions and never taking up on something that isn't of its responsablity. The functional limits of each element in this model are very strict.
+Regarding this software design pattern, each of these 3 elements is responsible for a type of specific function, "spitting out" the result of their very limited actions and never taking up on something that isn't of its responsibility. The functional limits of each element in this model are very strict.
 
 Everything included in the "Model" element is exclusively related to the fundamental logic behind the gameplay, actions and execution.
 Everything under the "View" element is responsible for UI, printing information to the player and input requests.
 Finally, the "Controller" element is responsible for making the connection between the two previously explained elements. It controls the game itself by calling what is needing and "communicating" between the logic and UI elements.
 
-### Model - Descrição
+### Text Files - Description
+
+1. **Enemies.txt**
+    - File containing each type of enemy and its individual **description**, **HP**, **attack power** and **defense**.
+  
+2. **Items.txt**
+    - File containing each type of item and its **name**, **type** and **buff value**.
+
+3. **Rooms.txt**
+    - File that  is, in all practical regards, the map. Every single room is numbered and contains:
+        - **Description**
+        - **Information on if there is or not a room in the each of the 4 cardinal direction (North, West, South and East), specifying said rooms' names in the such rooms do exist in those directions**
+        - **Information on if there is an enemy present in the room, specifying its name in such occasion**
+        - **Information on if there is an item present in the room, specifying its name in such occasion**
+  
+### Model - Description
 
 1. **Enum BuffTypes**
     - Enum containing the 3 different types of stat buffs that can exist: HP, Attack and Defense buffs.
@@ -76,10 +91,10 @@ Finally, the "Controller" element is responsible for making the connection betwe
         - **public void RemoveItem()** - Method that sets the room's item property to null, signifying there is no items in the room after this call;
         - **public void KillEnemy()** - Method that sets the room's enemy to null, signifying there is no enemies in the room after this call;
 
-### View - Descrição
+### View - Description
 
 1. **Interface IView**
-    - Contains all the methods that are to be implemented by the GameView class (that in this project assumes the full responsability of the View module of an MVC pattern)
+    - Contains all the methods that are to be implemented by the GameView class (that in this project assumes the full responsibility of the View module of an MVC pattern)
 
         - **string StartMenu()**
         - **void ExplainNewGame()**
@@ -110,10 +125,9 @@ Finally, the "Controller" element is responsible for making the connection betwe
         - **void GameOver()**
         - **void GameWin()**
   
-2. **Classe GameView**
-   In this project this class assumes the full responsability of the conceptual View module in an MVC design pattern. All its methods have eithe rthe obejctive of serving as a part of the UI or either print a message to communicate information to the player and/or even ask for input of the user. From giving flavour text to returning a player's input in order to be used elsewhere in the code, the GameView class only handles events withing these delimitations.
+2. **Class GameView**
+    - In this project this class assumes the full responsibility of the conceptual View module in an MVC design pattern. All its methods have either the objective of serving as a part of the UI or either print a message to communicate information to the player and/or even ask for input of the user. From giving flavour text to returning a player's input in order to be used elsewhere in the code, the GameView class only handles events withing these delimitations.
 
-   - Contém todos os métodos a ser implementados pela classe GameView:
         - **string StartMenu()** - A method to print out the Start Menu dialogue that comes up every single startup and the options to Start te game or Quit;
         - **void ExplainNewGame()** - A group of prints that aim to give a little bit of a flavorful introduction to the game setting and at the same time, inform the player about the objectives in the game and how to interact with the game text-based action system, while informing them how to navigate the dungeon;
         - **void ColoredText(string str, ConsoleColor color)** - Method to make it easier to print colored text;
@@ -143,7 +157,7 @@ Finally, the "Controller" element is responsible for making the connection betwe
         - **void GameOver()** - Print out a message in a game over situation;
         - **void GameWin()** - Print out a message for the occasion where the player finds the exit and wins the game;
 
-### Controller - Descrição
+### Controller - Description
 
 1. **Class Controller**
     - Descriptiioooooo
@@ -157,7 +171,7 @@ Finally, the "Controller" element is responsible for making the connection betwe
         - **public bool TakeItem(Item item)** -
         - **public void StartCombat(Enemy enemy)** -
 
-### Gráfico UML
+### UML Diagram
 
 ```mermaid
     classDiagram
@@ -197,4 +211,4 @@ Finally, the "Controller" element is responsible for making the connection betwe
         GameView ..|> IView
 ```
 
-## Referências
+## References
