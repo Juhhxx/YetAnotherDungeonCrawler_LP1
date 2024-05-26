@@ -94,5 +94,9 @@ namespace DungeonCrawler
 
             return item;
         }
+        public bool FoundFinalRoom()
+        {
+            return InRoom.IsFinal;
+        }
     }
 }
