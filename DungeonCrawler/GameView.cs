@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -45,7 +46,7 @@ namespace DungeonCrawler
             Console.Write(">");
             string s = Console.ReadLine();
             Console.WriteLine("|-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-|");
-
+            Console.WriteLine("\n");
             return s;
         }
         /// <summary>
@@ -77,6 +78,7 @@ I am here not only to challenge thee but to guide thee through it as well:
 
 Stay sharp and use thy items wisely to navigate this prison and maybe overcome it...");
             Console.WriteLine("|-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-|");
+            Console.WriteLine("\n");
         }
         /// <summary>
         /// Prints out the description of a specific room
@@ -85,6 +87,7 @@ Stay sharp and use thy items wisely to navigate this prison and maybe overcome i
         public void RoomDescription(Room room)
         {
             Console.WriteLine(room.Description);
+            Console.WriteLine("\n");
         }
         /// <summary>
         /// Prints out the description of a specific enemy
@@ -93,6 +96,7 @@ Stay sharp and use thy items wisely to navigate this prison and maybe overcome i
         public void EnemyDescription(Enemy enemy)
         {
             Console.WriteLine(enemy.Description);
+            Console.WriteLine("\n");
         }
         /// <summary>
         /// Prints out the description of a specific item
@@ -101,6 +105,7 @@ Stay sharp and use thy items wisely to navigate this prison and maybe overcome i
         public void ItemDescription(Item item)
         {
             Console.WriteLine(item.Description);
+            Console.WriteLine("\n");
         }
         /// <summary>
         /// This method is aiming to be a general non-specific input request
@@ -111,6 +116,7 @@ Stay sharp and use thy items wisely to navigate this prison and maybe overcome i
             Console.WriteLine("What will you do, adventurer?");
             Console.Write(">");
             string s = Console.ReadLine();
+            Console.WriteLine("\n");
             return s;
         }
         /// <summary>
@@ -123,6 +129,7 @@ Stay sharp and use thy items wisely to navigate this prison and maybe overcome i
             Console.WriteLine("1 - Attack    2 - Heal");
             Console.Write(">");
             string s = Console.ReadLine();
+            Console.WriteLine("\n");
             return s;
         }
         /// <summary>
@@ -134,6 +141,7 @@ Stay sharp and use thy items wisely to navigate this prison and maybe overcome i
             Console.WriteLine("The dungeon awaiteth thy decision...");
             Console.Write(">");
             string s = Console.ReadLine();
+            Console.WriteLine("\n");
             return s;
         }
         /// <summary>
@@ -145,13 +153,14 @@ Stay sharp and use thy items wisely to navigate this prison and maybe overcome i
         public void AttackResult(Character characterActive, Character characterPassive, int hitPower)
         {
             Console.WriteLine($"{characterActive.Name} attacked {characterPassive.Name} for {hitPower} damage!");
+            Console.WriteLine("\n");
         }
         /// <summary>
         /// Print out a victory message for when a battle is won byt the player
         /// </summary>
         public void BattleWin()
         {
-            Console.WriteLine("THE FOE HAS BEEN SLAIN!!!");
+            Console.WriteLine("THE FOE HAS BEEN SLAIN!!!\n");
         }
 
         /// <summary>
@@ -159,14 +168,14 @@ Stay sharp and use thy items wisely to navigate this prison and maybe overcome i
         /// </summary>
         public void CanMove()
         {
-            Console.WriteLine("Your journey advances into the next chamber");
+            Console.WriteLine("Your journey advances into the next chamber\n");
         }
         /// <summary>
         /// Print affirming the player can't move that way when exploring rooms
         /// </summary>
         public void CantMove()
         {
-            Console.WriteLine("Thy can not pass through there");
+            Console.WriteLine("Thy can not pass through there\n");
         }
         /// <summary>
         /// Print to communicate that the player has healed themselves for a certain value
@@ -175,6 +184,7 @@ Stay sharp and use thy items wisely to navigate this prison and maybe overcome i
         public void HealResult(Item potion)
         {
             Console.WriteLine($"You heal for {potion.BuffValue}");
+            Console.WriteLine("\n");
         }
         /// <summary>
         /// Prints out a little menu to show the Player's HP, Attack Power, Defense as well as
@@ -205,6 +215,7 @@ Stay sharp and use thy items wisely to navigate this prison and maybe overcome i
 
             Console.WriteLine(@$"
 |-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-|");
+            Console.WriteLine("\n");
         }
         /// <summary>
         /// Print out the request for confirmation on if the player wants to pick up a certain item
@@ -216,6 +227,7 @@ Stay sharp and use thy items wisely to navigate this prison and maybe overcome i
             Console.WriteLine($"Is it thy wish to pick {item.Name} up?");
             Console.Write(">");
             string s = Console.ReadLine();
+            Console.WriteLine("\n");
             return s;
         }
         /// <summary>
@@ -224,7 +236,7 @@ Stay sharp and use thy items wisely to navigate this prison and maybe overcome i
         /// <param name="item"></param>
         public void PickUpItem(Item item)
         {
-            Console.WriteLine($"You added {item.Name} to your inventory.");
+            Console.WriteLine($"You added {item.Name} to your inventory.\n");
         }
         /// <summary>
         /// Print a sentence onto the console to communicate that the player equipped an item
@@ -232,7 +244,7 @@ Stay sharp and use thy items wisely to navigate this prison and maybe overcome i
         /// <param name="item"></param>
         public void EquipItem(Item item)
         {
-            Console.WriteLine($"You equipped {item.Name}.");
+            Console.WriteLine($"You equipped {item.Name}.\n");
         }
         /// <summary>
         /// Print the details of each item: Name, type (sword, shield or potion) and its buff value
@@ -240,7 +252,7 @@ Stay sharp and use thy items wisely to navigate this prison and maybe overcome i
         /// <param name="item"></param>
         public void ItemInformation(Item item)
         {
-            Console.WriteLine($"{item.Name} - {item.Type} - {item.BuffValue}");
+            Console.WriteLine($"{item.Name} - {item.Type} - {item.BuffValue}\n");
         }
         /// <summary>
         /// Print a request for input on which item the player wants to use
@@ -251,6 +263,7 @@ Stay sharp and use thy items wisely to navigate this prison and maybe overcome i
             Console.WriteLine("Pick your tool. Use it Wisely...");
             Console.Write(">");
             string s = Console.ReadLine();
+            Console.WriteLine("\n");
             return s;
         }
 
@@ -259,7 +272,7 @@ Stay sharp and use thy items wisely to navigate this prison and maybe overcome i
         /// </summary>
         public void WarningNoEnemiesToFight()
         {
-            Console.WriteLine("There are no threats to annihilate. Spare your energy...");
+            Console.WriteLine("There are no threats to annihilate. Spare your energy...\n");
         }
 
         /// <summary>
@@ -267,42 +280,42 @@ Stay sharp and use thy items wisely to navigate this prison and maybe overcome i
         /// </summary>
         public void WarningItemNotInInventory()
         {
-            Console.WriteLine("What thou seekest is not in thy possession.");
+            Console.WriteLine("What thou seekest is not in thy possession.\n");
         }
         /// <summary>
         /// Print out a warning about the player's inventory being full
         /// </summary>
         public void WarningFullInventory()
         {
-            Console.WriteLine("It seems your inventory is too full to carry yet another item. ");
+            Console.WriteLine("It seems your inventory is too full to carry yet another item.\n");
         }
         /// <summary>
         /// Print out a warning that a name is required and that progress is not possible without it
         /// </summary>
         public void WarningNeedName()
         {
-            Console.WriteLine("Each adventurer hath a name, thou shouldst be no exception.\nName, please?");
+            Console.WriteLine("Each adventurer hath a name, thou shouldst be no exception.\nName, please?\n");
         }
         /// <summary>
         /// Print out a warning about the player having a written a wrong/misspelled command
         /// </summary>
         public void WarningWrongCommand()
         {
-            Console.WriteLine("Something is amiss with that command spell...");
+            Console.WriteLine("Something is amiss with that command spell...\n");
         }
         /// <summary>
         /// Print out a warning about not existing any items to pickup
         /// </summary>
         public void WarningNoItemToPickUp()
         {
-            Console.WriteLine("There is naught to pick up...");
+            Console.WriteLine("There is naught to pick up...\n");
         }
         /// <summary>
         /// Print out a warning about when an item wrong/not used for a certain purpose
         /// </summary>
         public void WarningWrongItem()
         {
-            Console.WriteLine("That is not a piece of equipment for this occasion...");
+            Console.WriteLine("That is not a piece of equipment for this occasion...\n");
         }
         /// <summary>
         /// Print out a goodbye message for the player when he quits the game
@@ -310,14 +323,14 @@ Stay sharp and use thy items wisely to navigate this prison and maybe overcome i
         public void ByeBye()
         {
             Console.WriteLine("Thou wishest to rest?");
-            Console.WriteLine("Very well... the dungeon shall await thy return.");
+            Console.WriteLine("Very well... the dungeon shall await thy return.\n");
         }
         /// <summary>
         /// Print out a message in a game over situation
         /// </summary>
         public void GameOver()
         {
-            Console.WriteLine("Death. A sweet relief...");
+            Console.WriteLine("Death. A sweet relief...\n \n");
         }
         /// <summary>
         /// Print out a message for the occasion where the player finds the exit and wins the game
@@ -325,7 +338,7 @@ Stay sharp and use thy items wisely to navigate this prison and maybe overcome i
         public void GameWin()
         {
             Console.WriteLine("Triumphant victory!");
-            Console.WriteLine("THE DUNGEON STANDS NO CHANCE BEFORE YOUR MIGHT!");
+            Console.WriteLine("THE DUNGEON STANDS NO CHANCE BEFORE YOUR MIGHT!\n \n");
         }
     }
 }
