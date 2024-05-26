@@ -230,7 +230,7 @@ Stay sharp and use thy items wisely to navigate this prison and maybe overcome i
         /// print a request for which item the player wants to use
         /// </summary>
         /// <returns>String of the name of the item the player wants to use</returns>
-        public string ItemToUSe()
+        public string ItemToUse()
         {
             Console.WriteLine("Pick your tool. Use it Wisely...");
             Console.Write(">");
