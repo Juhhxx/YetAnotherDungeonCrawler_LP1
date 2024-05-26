@@ -18,12 +18,14 @@ namespace DungeonCrawler
         // String used to analyze the files
         string s;
         // Enemy variables
-        private string eName; // Enemy name
+        private string eName; // Enemy Name
+        private string eDesc; //Enemy Description
         private int eHP; // Enemy HP
         private int eAtck; // Enemt Attack Power
         private int eDef; // Enemy Defence
         // Item variables
         private string iName; // Item Name
+        private string iDesc; // Item Description
         private BuffType iType; // Item Buff Type
         private int iValue; // Item Buff Value
         // Room variables
@@ -41,7 +43,7 @@ namespace DungeonCrawler
         private bool instanceReady = false;
         // Initial path for GameFiles folder
         private string pathFolder = Path.Combine("DungeonCrawler","GameFiles");
-        // Variable to sotre the Player
+        // Variable to store the Player
         private Player player;
         /// <summary>
         /// Constructor for GameInitializer class.
@@ -95,6 +97,10 @@ namespace DungeonCrawler
                                 // Set eName as second part
                                 eName = parameters[1];
                                 break;
+                            case "Description": //If equals Description
+                                // Set eDesc as second part
+                                eDesc = parameters[1];
+                                break;
                             case "HP": // If equals HP
                                 // Set eHP as second part
                                 eHP = int.Parse(parameters[1]);
@@ -114,7 +120,7 @@ namespace DungeonCrawler
                         if (instanceReady)
                         {
                             // Add new entry to enemyDict (eName,new Enemy instance)
-                            enemyDict.Add(eName,new Enemy(eName,eHP,eAtck,eDef));
+                            enemyDict.Add(eName,new Enemy(eName,eDesc,eHP,eAtck,eDef));
                             // Set isntanceReady as false
                             instanceReady = false;
                         }
@@ -151,6 +157,10 @@ namespace DungeonCrawler
                                 // Set iName as second part
                                 iName = parameters[1];
                                 break;
+                            case "Description": //If equals Description
+                                // Set iDesc as second part
+                                iDesc = parameters[1];
+                                break;
                             case "BuffType": // If equals BuffType
                                 // Set iType as second part
                                 iType = Enum.Parse<BuffType>(parameters[1]);
@@ -166,7 +176,7 @@ namespace DungeonCrawler
                         if (instanceReady)
                         {
                             // Add new entry to itemDict (iName, new Item instance)
-                            itemDict.Add(iName,new Item(iName,iType,iValue));
+                            itemDict.Add(iName,new Item(iName,iDesc,iType,iValue));
                             // Set isntanceReady as false
                             instanceReady = false;
                         }
