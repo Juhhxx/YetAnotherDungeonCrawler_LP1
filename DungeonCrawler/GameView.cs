@@ -68,6 +68,7 @@ Stay sharp and use thy items wisely to navigate this prison and maybe overcome i
         }
         public string AwaitDecision()
         {
+            Console.WriteLine("What will you do, adventurer?");
             Console.Write(">");
             string s = Console.ReadLine();
             return s;
@@ -75,6 +76,7 @@ Stay sharp and use thy items wisely to navigate this prison and maybe overcome i
         public string AwaitBattleInput()
         {
             Console.WriteLine("The battlefield is ready for your decision. Quick!");
+            Console.WriteLine("1 - Attack    2 - Heal");
             Console.Write(">");
             string s = Console.ReadLine();
             return s;
@@ -97,7 +99,7 @@ Stay sharp and use thy items wisely to navigate this prison and maybe overcome i
         }
         public void CantMove()
         {
-            Console.WriteLine("Not through there");
+            Console.WriteLine("Thy can not pass through there");
         }
         public void HealResult(Item potion)
         {
