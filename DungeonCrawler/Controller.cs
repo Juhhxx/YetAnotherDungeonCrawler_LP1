@@ -276,10 +276,11 @@ namespace DungeonCrawler
         }
 
         /// <summary>
-        /// 
+        /// TakeItem method receives an item and asks the player if they want to take it or leave
+        /// it. If the command is wrong, it will give a warning to the player and loop back to the menu.
         /// </summary>
-        /// <param name="item"></param>
-        /// <returns></returns>
+        /// <param name="item">The item to ask the player about.</param>
+        /// <returns>Returns true if the Player wants to take it, and false if they don't.</returns>
         public bool TakeItem(Item item)
         {
             bool result;
@@ -288,7 +289,6 @@ namespace DungeonCrawler
             while (true)
             {
                 // print - ask if they wanna take the item or not
-
                 input = view.AskPickUpItem(item).Trim().ToLower();
 
                 if ( input == "take" )
@@ -310,6 +310,13 @@ namespace DungeonCrawler
 
             return result;
         }
+
+        /// <summary>
+        /// StartCombat method initiates a combat between the player and an enemy. It handles
+        /// the player's actions (attack, heal, view status, or quit) and the enemy's counter-attacks
+        /// in a loop until either the enemy is defeated or the player dies.
+        /// </summary>
+        /// <param name="enemy">The enemy that the player will combat against.</param>
         public void StartCombat(Enemy enemy)
         {
             int hitPower;
