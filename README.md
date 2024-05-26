@@ -30,7 +30,11 @@ Começando pelo Main() dá-se uma instanciação de um objeto GameManager, chama
 
 1. **Enum BuffTypes**
 2. **Class Character**
-   - Responsável por 
+   - This is an abstract class that serves as the base for any character in the game, with the purpose of being extended in order to create more role-specific character like a player or enemy. As such
+
+      - **public int Attack(Character target)** - Method for combat between characters. It calculates the hit power of an attack by by first removing the targets defense out of the value and clamping it to 0,  and then applying the remaining value to the target's HP and clamping it to 0, returning the hit power of the attack.
+      - **public bool IsDead()** - Method that sees if the character is dead by checking if **HP <= 0**, returning the boolean resulting from it.
+
 3. **Class Enemy : Character**
 4. **Class Player : Character**
 5. **Class GameInitializer**
