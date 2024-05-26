@@ -26,7 +26,7 @@ namespace DungeonCrawler
         public void WarningNeedName();
         public void WarningWrongCommand();
         public void WarningNoItemToPickUp();
-        public void WarningNotShieldOrSword();
+        public void WarningWrongItem();
         public void ByeBye();
         public void GameOver();
         public void GameWin(); 
