@@ -5,19 +5,19 @@
 # Defense:[Enemy Defense]
 
 Name:Afonso Cunha
-Description:It's Afonso Cunha
+Description:It's Afonso Cunha, he is standing in the middle of the room
 HP:50
 AttackPower:5
 Defense:0
 
 Name:Fire Dragon
-Description:A giant beast
+Description:You find a giat fire-breathing beast sleeping in the room
 HP:100
 AttackPower:50
 Defense:10
 
 Name:Diogo
-Description:God himself
+Description:God himself looks down at you from the top of the room
 HP:9999
 AttackPower:50
 Defense:0
