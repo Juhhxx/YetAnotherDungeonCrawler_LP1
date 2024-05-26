@@ -13,7 +13,11 @@ A work by:
 
 - Júlia Costa - a22304403
     - Responsible for:
-  
+        - Code in GameInitializer class
+        - File mananging
+        - Code in Program
+        - Structure od Character class and subclasses (Player and Enemy)
+        - Documentation in GameInitializer
   
 - Mariana Martins - a22302203
     - Responsible for:
@@ -223,5 +227,5 @@ Finally, the "Controller" element is responsible for making the connection betwe
 ```
 
 ## References
-
-No References nor 3rd party opinions/help were used in this project.
+#### Open Code
+* [Stack Overflow, How to use delegates as parameters](https://stackoverflow.com/questions/63594763/pass-a-funct-bool-as-a-parameter-using-reflection)
