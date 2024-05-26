@@ -250,7 +250,7 @@ Stay sharp and use thy items wisely to navigate this prison and maybe overcome i
             Console.WriteLine("Very well... the dungeon shall await thy return.");
         }
         /// <summary>
-        /// print out a message in a game over situation
+        /// Print out a message in a game over situation
         /// </summary>
         public void GameOver()
         {
