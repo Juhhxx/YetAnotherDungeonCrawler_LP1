@@ -28,7 +28,7 @@ namespace DungeonCrawler
         /// A method to print out the Start Menu dialogue that comes up every single startup and the options
         /// to Start te game or Quit
         /// </summary>
-        /// <returns></returns>
+        /// <returns>Returns the string corresponding to the choice the player makes about wether to start or quit</returns>
         public string StartMenu()
         {
             Console.WriteLine("|-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-|");
@@ -48,7 +48,11 @@ namespace DungeonCrawler
 
             return s;
         }
-
+        /// <summary>
+        /// A group of prints that aim to give a little bit of a flavorful introduction to the game setting and
+        /// at the same time, inform the player about the objectives in the game and how to interact with the game
+        /// text-based action system, while informing them how to navigate the dungeon
+        /// </summary>
         public void ExplainNewGame()
         {
             Console.WriteLine("|-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-|");
@@ -74,11 +78,18 @@ I am here not only to challenge thee but to guide thee through it as well:
 Stay sharp and use thy items wisely to navigate this prison and maybe overcome it...");
             Console.WriteLine("|-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-|");
         }
-        
+        /// <summary>
+        /// prints out the description of a specific room
+        /// </summary>
+        /// <param name="room"></param>
         public void RoomDescription(Room room)
         {
             Console.WriteLine(room.Description);
         }
+        /// <summary>
+        /// This method is aiming to be a general non-specific input request
+        /// </summary>
+        /// <returns>String with player's input</returns>
         public string AwaitDecision()
         {
             Console.WriteLine("What will you do, adventurer?");
@@ -86,6 +97,10 @@ Stay sharp and use thy items wisely to navigate this prison and maybe overcome i
             string s = Console.ReadLine();
             return s;
         }
+        /// <summary>
+        /// This method is for requesting the player's input in a battle situation
+        /// </summary>
+        /// <returns>String with player's input</returns>
         public string AwaitBattleInput()
         {
             Console.WriteLine("The battlefield is ready for your decision. Quick!");
@@ -94,6 +109,10 @@ Stay sharp and use thy items wisely to navigate this prison and maybe overcome i
             string s = Console.ReadLine();
             return s;
         }
+        /// <summary>
+        /// This method is for requesting the player's input when th player is exploring a room
+        /// </summary>
+        /// <returns>String with player's input</returns>
         public string AwaitRoomInput()
         {
             Console.WriteLine("The dungeon awaiteth thy decision...");
