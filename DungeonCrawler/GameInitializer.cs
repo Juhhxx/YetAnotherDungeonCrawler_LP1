@@ -33,11 +33,10 @@ namespace DungeonCrawler
         private string rSouth;
         private string rEast;
         private string rWest;
-        
+        // Bool value to know when an instance ir ready
         private bool instanceReady = false;
-
+        // Initial path for GameFiles
         string pathFolder = Path.Combine("DungeonCrawler","GameFiles");
-
         public void InitializeGame()
         {
             InitializeEnemies();
@@ -76,17 +75,16 @@ namespace DungeonCrawler
                         }
                         if (instanceReady)
                         {
-                            Console.WriteLine("Enemy Created");
                             enemyDict.Add(eName,new Enemy(eName,eHP,eAtck,eDef));
                             instanceReady = false;
                         }
                     }
                 }
             }
-            foreach (KeyValuePair<string,Enemy> kvp in enemyDict)
-            {
-                Console.WriteLine($"{kvp.Key} : {kvp.Value.HP}, {kvp.Value.AttackPower}, {kvp.Value.Defense}");
-            } 
+            // foreach (KeyValuePair<string,Enemy> kvp in enemyDict)
+            // {
+            //     Console.WriteLine($"{kvp.Key} : {kvp.Value.HP}, {kvp.Value.AttackPower}, {kvp.Value.Defense}");
+            // } 
         }
         private void InitializeItems()
         {
@@ -117,17 +115,16 @@ namespace DungeonCrawler
                         }
                         if (instanceReady)
                         {
-                            Console.WriteLine("Item created");
                             itemDict.Add(iName,new Item(iName,iType,iValue));
                             instanceReady = false;
                         }
                     }
                 }
             }
-            foreach (KeyValuePair<string,Item> kvp in itemDict)
-            {
-                Console.WriteLine($"{kvp.Key} : {kvp.Value.Type.ToString()}, {kvp.Value.BuffValue}");
-            } 
+            // foreach (KeyValuePair<string,Item> kvp in itemDict)
+            // {
+            //     Console.WriteLine($"{kvp.Key} : {kvp.Value.Type.ToString()}, {kvp.Value.BuffValue}");
+            // } 
         }
         private void InitializeRooms()
         {
@@ -173,23 +170,20 @@ namespace DungeonCrawler
                         }
                         if (instanceReady)
                         {
-                            Console.WriteLine("Room created");
-
                             roomDirections = new string[4] { rNorth, rSouth, rEast, rWest };
-                            
                             roomDirectionsList.Add(roomDirections);
-                            roomDict.Add(rName,new Room(rName,rDesc,rEnemy,rItem));
+                            roomDict.Add(rName,new Room(rDesc,rEnemy,rItem));
                             instanceReady = false;
                         }
                     }
                 }
             }
             SetUpRoomDirections();
-            foreach (KeyValuePair<string,Room> kvp in roomDict)
-            {
-                // Console.WriteLine($"{kvp.Key}\n{kvp.Value.Description}\n{kvp.Value.accessRooms["north"].Name}\n{kvp.Value.accessRooms["south"].Name}\n{kvp.Value.accessRooms["east"].Name}\n{kvp.Value.accessRooms["west"].Name}\nEnemy: {kvp.Value.REnemy.Name}  {kvp.Value.REnemy.HP} {kvp.Value.REnemy.AttackPower}\nItem: {kvp.Value.RItem.Name} {kvp.Value.RItem.Type.ToString()} {kvp.Value.RItem.BuffValue}");
-                Console.WriteLine($"{kvp.Key}\nNorth:{kvp.Value.accessRooms["north"]}\nSouth:{kvp.Value.accessRooms["south"]}\nEast:{kvp.Value.accessRooms["east"]}\nWest:{kvp.Value.accessRooms["west"]}");
-            } 
+            // foreach (KeyValuePair<string,Room> kvp in roomDict)
+            // {
+            //     // Console.WriteLine($"{kvp.Key}\n{kvp.Value.Description}\n{kvp.Value.accessRooms["north"].Name}\n{kvp.Value.accessRooms["south"].Name}\n{kvp.Value.accessRooms["east"].Name}\n{kvp.Value.accessRooms["west"].Name}\nEnemy: {kvp.Value.REnemy.Name}  {kvp.Value.REnemy.HP} {kvp.Value.REnemy.AttackPower}\nItem: {kvp.Value.RItem.Name} {kvp.Value.RItem.Type.ToString()} {kvp.Value.RItem.BuffValue}");
+            //     Console.WriteLine($"{kvp.Key}\nNorth:{kvp.Value.accessRooms["north"]}\nSouth:{kvp.Value.accessRooms["south"]}\nEast:{kvp.Value.accessRooms["east"]}\nWest:{kvp.Value.accessRooms["west"]}");
+            // } 
         }
         private string NullOrValue(string param,string variable)
         {
