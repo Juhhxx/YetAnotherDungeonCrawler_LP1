@@ -117,11 +117,7 @@ namespace DungeonCrawler
                         }
                     }
                 }
-            }
-            // foreach (KeyValuePair<string,Enemy> kvp in enemyDict)
-            // {
-            //     Console.WriteLine($"{kvp.Key} : {kvp.Value.HP}, {kvp.Value.AttackPower}, {kvp.Value.Defense}");
-            // } 
+            } 
         }
         /// <summary>
         /// Initialize all Item instances given in the Items.txt file.
@@ -174,10 +170,6 @@ namespace DungeonCrawler
                     }
                 }
             }
-            // foreach (KeyValuePair<string,Item> kvp in itemDict)
-            // {
-            //     Console.WriteLine($"{kvp.Key} : {kvp.Value.Type.ToString()}, {kvp.Value.BuffValue}");
-            // } 
         }
         /// <summary>
         /// Initialize all the Room instances give in the Rooms.txt file.
@@ -255,11 +247,6 @@ namespace DungeonCrawler
                 }
             }
             SetUpRoomDirections();
-            // foreach (KeyValuePair<string,Room> kvp in roomDict)
-            // {
-            //     // Console.WriteLine($"{kvp.Key}\n{kvp.Value.Description}\n{kvp.Value.accessRooms["north"].Name}\n{kvp.Value.accessRooms["south"].Name}\n{kvp.Value.accessRooms["east"].Name}\n{kvp.Value.accessRooms["west"].Name}\nEnemy: {kvp.Value.REnemy.Name}  {kvp.Value.REnemy.HP} {kvp.Value.REnemy.AttackPower}\nItem: {kvp.Value.RItem.Name} {kvp.Value.RItem.Type.ToString()} {kvp.Value.RItem.BuffValue}");
-            //     Console.WriteLine($"{kvp.Key}\nNorth:{kvp.Value.accessRooms["north"]}\nSouth:{kvp.Value.accessRooms["south"]}\nEast:{kvp.Value.accessRooms["east"]}\nWest:{kvp.Value.accessRooms["west"]}");
-            // } 
         }
         /// <summary>
         /// Find if a specified varaible should be null or have a value.
@@ -270,12 +257,12 @@ namespace DungeonCrawler
         /// <returns>Value to be set.</returns>
         private string NullOrValue(string param,string variable)
         {
-            // Check if param not equals "-"
+            // Check if param not equals to "-"
             if (param != "-")
                 // If true set variable as param
                 variable = param;
             else
-                // If  fase set variable as null
+                // If false set variable as null
                 variable = null;
             // Return variable
             return variable;
@@ -289,12 +276,12 @@ namespace DungeonCrawler
         /// <returns>Value to be set.</returns>
         private Enemy NullOrValue(string param,Enemy variable)
         {
-            // Check if param not equals "-"
+            // Check if param not equals to "-"
             if (param != "-")
                 // If true set variable as param
                 variable = enemyDict[param];
             else
-                // If  fase set variable as null
+                // If false set variable as null
                 variable = null;
             // Return variable
             return variable;
@@ -308,12 +295,12 @@ namespace DungeonCrawler
         /// <returns>Value to be set.</returns>
         private Item NullOrValue(string param,Item variable)
         {
-            // Check if param not equals "-"
+            // Check if param not equals to "-"
             if (param != "-")
                 // If true set variable as param
                 variable = itemDict[param];
             else
-                // If  fase set variable as null
+                // If false set variable as null
                 variable = null;
             // Return variable
             return variable;
