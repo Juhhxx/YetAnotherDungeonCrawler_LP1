@@ -16,6 +16,7 @@ namespace DungeonCrawler
         public string AwaitBattleInput();
         public string AwaitRoomInput();
         public void AttackResult(Character characterActive, Character characterPassive, int hitPower );
+        public void BattleWin();
         public void CantMove();
         public void CanMove();
         public void HealResult(Item potion);

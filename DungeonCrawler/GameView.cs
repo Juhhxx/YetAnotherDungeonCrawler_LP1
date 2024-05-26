@@ -131,6 +131,14 @@ Stay sharp and use thy items wisely to navigate this prison and maybe overcome i
             Console.WriteLine($"{characterActive.Name} attacked {characterPassive} for {characterActive.Attack(characterPassive)} damage!");
         }
         /// <summary>
+        /// Print out a victory message for when a battle is won byt the player
+        /// </summary>
+        public void BattleWin()
+        {
+            Console.WriteLine("THE FOE HAS BEEN SLAIN!!!");
+        }
+
+        /// <summary>
         /// Print that accompanies a communicates to the player that he has moved to the next room
         /// </summary>
         public void CanMove()
