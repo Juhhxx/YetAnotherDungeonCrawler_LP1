@@ -26,7 +26,6 @@ namespace DungeonCrawler
             Console.WriteLine("What hath brought thee here then?\n");
 
             Console.WriteLine("New Game");
-            Console.WriteLine("Continue");
             Console.WriteLine("Quit");
 
             Console.Write(">");
