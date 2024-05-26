@@ -16,7 +16,7 @@ namespace DungeonCrawler
         public void ColoredText(string str, ConsoleColor color);
         public void RoomDescription(Room room);
         public void EnemyDescription(Enemy enemy);
-        public void ItemDescription(Enemy enemy);
+        public void ItemDescription(Item item);
         public string AwaitDecision();
         public string AwaitBattleInput();
         public string AwaitRoomInput();
