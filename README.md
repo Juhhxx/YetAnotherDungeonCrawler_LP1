@@ -13,7 +13,11 @@ A work by:
 
 - Júlia Costa - a22304403
     - Responsible for:
-  
+        - Code in GameInitializer class
+        - File mananging
+        - Code in Program
+        - Structure od Character class and subclasses (Player and Enemy)
+        - Documentation in GameInitializer
   
 - Mariana Martins - a22302203
     - Responsible for:
