@@ -128,7 +128,7 @@ Stay sharp and use thy items wisely to navigate this prison and maybe overcome i
         /// <param name="hitPower"></param>
         public void AttackResult(Character characterActive, Character characterPassive, int hitPower)
         {
-            Console.WriteLine($"{characterActive.Name} attacked {characterPassive} for {characterActive.Attack(characterPassive)} damage!");
+            Console.WriteLine($"{characterActive.Name} attacked {characterPassive.Name} for {hitPower} damage!");
         }
         /// <summary>
         /// Print out a victory message for when a battle is won byt the player
