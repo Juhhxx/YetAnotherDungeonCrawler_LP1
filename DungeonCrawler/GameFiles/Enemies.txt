@@ -1,26 +1,39 @@
-# To create a new Enemy write a new block following the bellow logic
+# To create a new Enemy write a new block following the below logic
 # Name:[Enemy Name]
+# Description:[Enemy Description]
 # HP:[Enemy HP]
-# AttackPower:[Enemy Atack Power]
+# AttackPower:[Enemy Attack Power]
 # Defense:[Enemy Defense]
 
-Name:Afonso Cunha
-Description:It's Afonso Cunha, he is standing in the middle of the room
-HP:50
+Name:Giant Rat
+Description:Hiding in the shadow lay a large, filthy rat with glowing eyes and sharp teeth.
+HP:20
 AttackPower:5
-Defense:0
+Defense:2
 
-Name:Fire Dragon
-Description:You find a giat fire-breathing beast sleeping in the room
+Name:Skeleton
+Description:You hear the faint clattering of bones from a reanimated skeleton warrior in the distance.
+HP:15
+AttackPower:10
+Defense:5
+
+Name:Goblin
+Description:A small, green-skinned creature with sharp claws and a mischievous grin wanders about.
+HP:30
+AttackPower:15
+Defense:3
+
+Name:Gremlin
+Description:You hear muttering of a twisted creature talking to itself while tinkering with broken devices.
+HP:25
+AttackPower:20
+Defense:4
+
+Name:Dragon
+Description:A massive dragon with shimmering scales, sleeps in on top of the treasure.
 HP:100
 AttackPower:50
 Defense:10
-
-Name:Diogo
-Description:God himself looks down at you from the top of the room
-HP:9999
-AttackPower:50
-Defense:0
 
 END
 
