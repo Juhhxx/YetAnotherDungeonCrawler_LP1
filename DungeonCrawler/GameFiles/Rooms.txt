@@ -9,15 +9,15 @@
 # Item:[Item in the Room]
 #
 # All fields except Name and Description can be set to null by using a "-"
-# The first room block will be the room where the player spawns, 
-# and the last room block will be the final room
+# The room block named Initial Room will be the room where the player spawns, 
+# and the room block named Final Room will be the final room
 
-Name:Room1
+Name:Initial Room
 Description:You see a menacing figure in the middle of the Room1
 North:-
 South:-
 East:Room2
-West:Room3
+West:Final Room
 Enemy:Diogo
 Item:Legendary Sword
 
@@ -30,11 +30,11 @@ West:Room1
 Enemy:-
 Item:Pau do Ivan
 
-Name:Room3
+Name:Final Room
 Description:The smell of love fills the air as much as the smell of roten flesh... Whatever depraved fantasies were here explored, they better mimic these corpses and better stay dead
 North:-
 South:-
-East:Room1
+East:Initial Room
 West:-
 Enemy:-
 Item:-
