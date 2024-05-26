@@ -6,6 +6,9 @@ using System.IO;
 
 namespace DungeonCrawler
 {
+    /// <summary>
+    /// Class that analyzes game files and instantiates all game objects.
+    /// </summary>
     public class GameInitializer
     {
         // Dictionaries to store instances of objects
