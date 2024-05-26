@@ -38,7 +38,21 @@ Começando pelo Main() dá-se uma instanciação de um objeto GameManager, chama
       - **public bool IsDead()** - Method that sees if the character is dead by checking if **HP <= 0**, returning the boolean resulting from it.
 
 3. **Class Enemy : Character**
+    - This class has only the constructor for a specific enemy, inheriting the **Attack()** and **IsDead()** methods from its parent class - **Character**, but has no enemy specific methods.
 4. **Class Player : Character**
+    - Like the Enemy class, this one has a specific constructor for the player character, inheriting as well the **Attack()** and **IsDead()** methods, while having some more player-specific ones:
+
+        - **public void SetInitialRoom(Room initialRoom)** - Method to set the room that the player is initially in;
+        - **public bool Move(string direction)** - Method that moves the player between rooms, by checking if the given direction, in the current room's accessible rooms library, is not blocked off. Moves the player and returns true if the player can walk in that direction, otherwise returns false and the player doesn't move;
+        - **public bool PickUpItem(Item newItem)** - Receives an Item and Adds it to the Inventory if it is not full. Returns true if the inventory is not full, returns false if it is full;
+        - **public void Heal(Item potion)** - Adds the buff a potion gives to the health of the Player, and then removes the potion from the Player's Inventory;
+        - **public bool Equip(Item newItem)** - Adds the buff from a weapon or shield adding it to the attack power or defense stat of the Player, then setting it to weapon or shield property, and then removes the item from the Player's current room;
+        - **public Item ConfirmItem(bool isPotion)** - Method to confirm if the item in the Player's current room is or not a potion. If the method confirms the item is a potion, it returns the item, else it returns null;
+        - **public Enemy ConfirmEnemy()** - Method that returns the Player's current room's enemy. It will return null if there is no enemy, and return the enemy if it is not null;
+        - **public bool CheckForItem()** - Method that returns if the Player's current room has an item. It will return false if there are no items, and return true if there is an item;
+        - **public bool CheckForEnemy()** - Method that returns if the Player's current room has an enemy. It will return false if there is no enemy, and return true if there are enemies in that room;
+        - **public Item SearchInInventory(string name)** - Method that looks through the Inventory for the first item with a given name. Returns the item if it is not null (if it is in the inventory), and return null if there is no item;
+        - **public bool FoundFinalRoom()** - Method that checks if the Player has found a final room, returning **IsFinal()** using the current room as its parameter;
 5. **Class GameInitializer**
 6. **Class GameView**
 7. **Class Item**
