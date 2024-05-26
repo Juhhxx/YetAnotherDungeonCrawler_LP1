@@ -256,6 +256,9 @@ Stay sharp and use thy items wisely to navigate this prison and maybe overcome i
         {
             Console.WriteLine("Death. A sweet relief...");
         }
+        /// <summary>
+        /// Print out a message for the occasion where the player finds the exit and wins the game
+        /// </summary>
         public void GameWin()
         {
             Console.WriteLine("Triumphant victory!");
